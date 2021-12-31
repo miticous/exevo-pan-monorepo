@@ -5,14 +5,15 @@ import {
   useEffect,
   useRef,
   memo,
-} from 'react'
-import { Option } from 'components/Atoms'
-import { v4 as uuidv4 } from 'uuid'
-import { indexToId } from 'components/Atoms/Listbox/utils'
-import * as S from './styles'
-import { filterByTerm } from './utils'
-import { AutocompleteInputProps } from './types'
-import AutocompleteInputReducer from './reducer'
+} from "react";
+import { Option as OptionComponent } from "components/Atoms";
+import { v4 as uuidv4 } from "uuid";
+import { indexToId } from "components/Atoms/Listbox/utils";
+import { Option } from "shared-types";
+import * as S from "./styles";
+import { filterByTerm } from "./utils";
+import { AutocompleteInputProps } from "./types";
+import AutocompleteInputReducer from "./reducer";
 
 const AutocompleteInput = ({
   className,
@@ -21,85 +22,85 @@ const AutocompleteInput = ({
   onItemSelect,
   ...props
 }: AutocompleteInputProps): JSX.Element => {
-  const { current: listboxId } = useRef(uuidv4())
+  const { current: listboxId } = useRef(uuidv4());
 
-  const [currentList, setCurrentList] = useState<Option[]>(itemList)
+  const [currentList, setCurrentList] = useState<Option[]>(itemList);
   const [{ listboxStatus, highlightedIndex, inputValue }, dispatch] =
     useReducer(AutocompleteInputReducer, {
       listboxStatus: false,
       highlightedIndex: undefined,
-      inputValue: '',
-    })
+      inputValue: "",
+    });
 
   const handleChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      dispatch({ type: 'USER_TYPING', value: event.target.value })
-      setCurrentList(filterByTerm(event.target.value, itemList))
+      dispatch({ type: "USER_TYPING", value: event.target.value });
+      setCurrentList(filterByTerm(event.target.value, itemList));
     },
-    [itemList],
-  )
+    [itemList]
+  );
 
   const handleKeyboard = (event: React.KeyboardEvent) => {
     switch (event.code) {
-      case 'Tab':
-      case 'Escape':
-        dispatch({ type: 'SET_LISTBOX_STATUS', value: false })
-        break
-      case 'ArrowUp':
+      case "Tab":
+      case "Escape":
+        dispatch({ type: "SET_LISTBOX_STATUS", value: false });
+        break;
+      case "ArrowUp":
         if (currentList.length)
           dispatch({
-            type: 'ARROW_NAVIGATION',
+            type: "ARROW_NAVIGATION",
             value: -1,
             list: currentList,
-          })
-        event.preventDefault()
-        break
-      case 'ArrowDown':
+          });
+        event.preventDefault();
+        break;
+      case "ArrowDown":
         if (currentList.length)
           dispatch({
-            type: 'ARROW_NAVIGATION',
+            type: "ARROW_NAVIGATION",
             value: 1,
             list: currentList,
-          })
-        event.preventDefault()
-        break
-      case 'Enter':
-      case 'NumpadEnter':
+          });
+        event.preventDefault();
+        break;
+      case "Enter":
+      case "NumpadEnter":
         if (currentList.length === 1) {
-          onItemSelect?.(currentList[0])
-          dispatch({ type: 'OPTION_SELECTED' })
+          onItemSelect?.(currentList[0]);
+          dispatch({ type: "OPTION_SELECTED" });
         } else if (highlightedIndex !== undefined) {
-          onItemSelect?.(currentList[highlightedIndex])
-          dispatch({ type: 'OPTION_SELECTED' })
+          onItemSelect?.(currentList[highlightedIndex]);
+          dispatch({ type: "OPTION_SELECTED" });
         }
-        break
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
 
   useEffect(() => {
     if (highlightedIndex !== undefined) {
       const item = document.getElementById(
-        indexToId(highlightedIndex, listboxId) as string,
-      )
+        indexToId(highlightedIndex, listboxId) as string
+      );
       item?.scrollIntoView({
-        block: 'nearest',
-      })
+        block: "nearest",
+      });
     }
-  }, [highlightedIndex, listboxId])
+  }, [highlightedIndex, listboxId]);
 
   useEffect(() => {
-    setCurrentList(itemList)
-  }, [itemList])
+    setCurrentList(itemList);
+  }, [itemList]);
 
   const onSelectOption = useCallback(
     (option: Option) => {
-      onItemSelect?.(option)
-      dispatch({ type: 'OPTION_SELECTED' })
+      onItemSelect?.(option);
+      dispatch({ type: "OPTION_SELECTED" });
     },
-    [onItemSelect],
-  )
+    [onItemSelect]
+  );
 
   return (
     <S.Wrapper className={className} style={style}>
@@ -114,9 +115,9 @@ const AutocompleteInput = ({
             onSelectOption={onSelectOption}
           >
             {currentList.map((item) => (
-              <Option key={item.value} value={item.value}>
+              <OptionComponent key={item.value} value={item.value}>
                 {item.name}
-              </Option>
+              </OptionComponent>
             ))}
           </S.Listbox>
         }
@@ -130,18 +131,18 @@ const AutocompleteInput = ({
           allowClear
           value={inputValue}
           onChange={handleChange}
-          onFocus={() => dispatch({ type: 'SET_LISTBOX_STATUS', value: true })}
-          onClick={() => dispatch({ type: 'SET_LISTBOX_STATUS', value: true })}
+          onFocus={() => dispatch({ type: "SET_LISTBOX_STATUS", value: true })}
+          onClick={() => dispatch({ type: "SET_LISTBOX_STATUS", value: true })}
           onKeyDown={handleKeyboard}
           {...props}
         />
       </S.Popover>
       <S.Backdrop
-        onMouseUp={() => dispatch({ type: 'SET_LISTBOX_STATUS', value: false })}
+        onMouseUp={() => dispatch({ type: "SET_LISTBOX_STATUS", value: false })}
         hidden={!listboxStatus}
       />
     </S.Wrapper>
-  )
-}
+  );
+};
 
-export default memo(AutocompleteInput)
+export default memo(AutocompleteInput);

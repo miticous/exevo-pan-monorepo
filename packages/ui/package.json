@@ -1,10 +1,10 @@
 {
   "name": "ui",
   "version": "0.0.0",
-  "main": "./index.tsx",
-  "types": "./index.tsx",
+  "main": "./src/index.tsx",
+  "types": "./src/index.tsx",
   "license": "MIT",
-  "dependencies":{
+  "dependencies": {
     "@popperjs/core": "^2.9.2",
     "react": "17.0.2",
     "react-popper": "^2.2.5",
@@ -26,7 +26,8 @@
     "jest-cli": "^26.6.3",
     "jest-dom": "^4.0.0",
     "typescript": "^4.5.3",
-    "tsconfig": "*",
-    "config": "*"
+    "config": "*",
+    "shared-types": "*",
+    "tsconfig": "*"
   }
 }
