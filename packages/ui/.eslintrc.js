@@ -1,4 +1,4 @@
-import config from 'config/eslint-react.json'
+const config = require('config/eslint-react')
 
 module.exports = {
   ...config,

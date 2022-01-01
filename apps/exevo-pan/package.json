@@ -46,7 +46,6 @@
     "@vercel/node": "^1.12.1",
     "babel-jest": "^26.6.3",
     "config": "*",
-    "eslint": "^7.32.0",
     "faker": "^5.5.3",
     "jest": "^26.6.3",
     "jest-axe": "^5.0.1",
