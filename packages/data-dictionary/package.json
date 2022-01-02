@@ -2,8 +2,11 @@
   "name": "data-dictionary",
   "version": "0.0.0",
   "description": "Data dictionary for Exevo Pan",
-  "main": "./dist/dictionaries/index.js",
+  "main": "dist",
   "author": "xandjiji <xandjiji@gmail.com>",
+  "files": [
+    "dist"
+  ],
   "license": "MIT",
   "scripts": {
     "build": "tsc"

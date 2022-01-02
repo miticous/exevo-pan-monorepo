@@ -1,9 +1,11 @@
 {
   "extends": "tsconfig/base.json",
   "compilerOptions": {
-    "baseUrl": "src/",
-    "outDir": "./dist"
+    "module": "commonjs",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "declaration": true
   },
-  "include": ["**/*.ts", "src/index.d.ts"],
+  "include": ["**/*.ts", "types.d.ts"],
   "exclude": ["node_modules", "dist"]
 }
