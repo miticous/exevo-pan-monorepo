@@ -33,6 +33,7 @@
     "@testing-library/react": "^11.2.6",
     "@testing-library/react-hooks": "^7.0.0",
     "@testing-library/user-event": "^13.1.9",
+    "@types/exevo-pan": "*",
     "@types/faker": "^5.5.7",
     "@types/jest": "^26.0.23",
     "@types/jest-axe": "^3.5.2",

@@ -1,0 +1,8 @@
+{
+  "name": "@types/exevo-pan",
+  "version": "0.0.0",
+  "description": "Shared types used across Exevo Pan projects",
+  "license": "MIT",
+  "main": "",
+  "types": "index.d.ts"
+}
