@@ -7,6 +7,9 @@
     "eslint-node.js",
     "eslint-react.js"
   ],
+  "scripts": {
+    "clean": "rm -rf node_modules"
+  },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.29.1",

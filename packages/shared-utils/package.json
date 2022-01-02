@@ -4,12 +4,13 @@
   "description": "Shared utils for Exevo Pan",
   "main": "dist",
   "author": "xandjiji <xandjiji@gmail.com>",
+  "license": "MIT",
   "files": [
     "dist"
   ],
-  "license": "MIT",
   "scripts": {
-    "build": "rm -rf dist/ && tsc"
+    "build": "rm -rf dist/ && tsc",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
     "@types/exevo-pan": "*",
