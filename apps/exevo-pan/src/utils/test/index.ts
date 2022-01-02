@@ -1,2 +1,2 @@
-export * from './mockMaker'
+export * from 'mock-maker'
 export * from './renderWithProviders'
