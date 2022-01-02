@@ -9,7 +9,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "build": "rm -rf dist/ && tsc"
   },
   "devDependencies": {
     "@types/exevo-pan": "*"
