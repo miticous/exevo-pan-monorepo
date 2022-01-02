@@ -1,16 +1,8 @@
 {
   "name": "data-dictionary",
   "version": "0.0.0",
-  "description": "Mocked data generators for Exevo Pan",
-  "main": "index.ts",
+  "description": "Data dictionary for Exevo Pan",
+  "main": "./src/dictionaries/index.ts",
   "author": "xandjiji <xandjiji@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "faker": "^5.5.3"
-  },
-  "devDependencies": {
-    "@types/faker": "^5.5.9",
-    "config": "*",
-    "typescript": "4.3.5"
-  }
+  "license": "MIT"
 }
