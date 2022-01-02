@@ -1,10 +1,9 @@
 import { endpoints } from 'Constants'
-import { PaginationOptions, SortOptions } from './types'
 
 export const serializeBody = (
   paginationOptions: PaginationOptions,
   sortOptions: SortOptions,
-  filterOptions: FilterState,
+  filterOptions: FilterOptions,
 ): string => {
   const serializedFilterState: SerializedFilterOptions = {
     ...filterOptions,

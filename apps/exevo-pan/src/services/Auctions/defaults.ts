@@ -1,5 +1,3 @@
-import { PaginationOptions, SortOptions } from './types'
-
 export const DEFAULT_PAGINATION_OPTIONS: PaginationOptions = {
   pageIndex: 0,
   pageSize: 10,
@@ -10,7 +8,7 @@ export const DEFAULT_SORT_OPTIONS: SortOptions = {
   descendingOrder: false,
 }
 
-export const DEFAULT_FILTER_STATE: FilterState = {
+export const DEFAULT_FILTER_STATE: FilterOptions = {
   nicknameFilter: '',
   vocation: new Set([]),
   pvp: new Set([]),

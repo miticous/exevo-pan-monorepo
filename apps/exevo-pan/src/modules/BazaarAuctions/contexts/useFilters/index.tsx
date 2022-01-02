@@ -16,10 +16,10 @@ const {
   getUrlValues,
   setUrlValues,
 } = urlParametersState(filterSchema)
-const defaultValues = untypedDefaultValues as FilterState
+const defaultValues = untypedDefaultValues as FilterOptions
 
 const initialFilterState =
-  (getUrlValues() as FilterState | undefined) ?? defaultValues
+  (getUrlValues() as FilterOptions | undefined) ?? defaultValues
 
 const DEFAULT_STATE: FiltersContextValues = {
   filterState: initialFilterState,
@@ -48,13 +48,13 @@ export const FiltersProvider = ({
   }, [state.filterState])
 
   const updateFilters = useCallback(
-    (key: keyof FilterState, value: any) =>
+    (key: keyof FilterOptions, value: any) =>
       dispatch({ type: 'UPDATE_FILTER', key, value }),
     [],
   )
 
   const toggleAllOptions = useCallback(
-    (key: keyof FilterState, allOptions: Option[]) =>
+    (key: keyof FilterOptions, allOptions: Option[]) =>
       dispatch({ type: 'TOGGLE_ALL_OPTIONS', key, allOptions }),
     [],
   )

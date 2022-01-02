@@ -1,12 +1,12 @@
 export type Action =
   | {
       type: 'UPDATE_FILTER'
-      key: keyof FilterState
+      key: keyof FilterOptions
       value: any
     }
   | {
       type: 'TOGGLE_ALL_OPTIONS'
-      key: keyof FilterState
+      key: keyof FilterOptions
       allOptions: Option[]
     }
   | {
@@ -18,13 +18,13 @@ export type Action =
     }
 
 export interface FiltersContextState {
-  filterState: FilterState
-  defaultValues: FilterState
+  filterState: FilterOptions
+  defaultValues: FilterOptions
   activeFilterCount: number
 }
 
 export interface FiltersContextValues extends FiltersContextState {
-  updateFilters: (key: keyof FilterState, value: any) => void
-  toggleAllOptions: (key: keyof FilterState, allOptions: Option[]) => void
+  updateFilters: (key: keyof FilterOptions, value: any) => void
+  toggleAllOptions: (key: keyof FilterOptions, allOptions: Option[]) => void
   dispatch: React.Dispatch<Action>
 }

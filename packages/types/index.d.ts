@@ -8,4 +8,5 @@
 /// <reference path="declarations/PaginatedData.d.ts" />
 /// <reference path="declarations/RareItemObject.d.ts" />
 /// <reference path="declarations/ServerObject.d.ts" />
+/// <reference path="declarations/StatisticsObject.d.ts" />
 /// <reference path="declarations/WarStatistics.d.ts" />

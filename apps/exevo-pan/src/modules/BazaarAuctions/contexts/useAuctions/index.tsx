@@ -60,7 +60,7 @@ export const AuctionsProvider = ({
       newPageIndex: number,
       newSortingMode: number,
       newDescendingOrder: boolean,
-      filterOptions: FilterState,
+      filterOptions: FilterOptions,
       newFilterCount: number,
     ) => {
       dispatch({ type: 'SET_LOADING' })

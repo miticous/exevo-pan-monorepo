@@ -12,23 +12,23 @@ function toggleSet<T>(set: Set<T>, value: T): Set<T> {
 }
 
 export const toggleFilterValue = (
-  currentFilters: FilterState,
-  key: keyof FilterState,
+  currentFilters: FilterOptions,
+  key: keyof FilterOptions,
   value: any,
-): FilterState => ({
+): FilterOptions => ({
   ...currentFilters,
   [key]: toggleSet(currentFilters[key] as Set<typeof value>, value),
 })
 
 export const countActiveFilters = (
-  defaultFilters: FilterState,
-  currentFilters: FilterState,
+  defaultFilters: FilterOptions,
+  currentFilters: FilterOptions,
 ): number =>
   Object.keys(defaultFilters).reduce(
     (acc, filterKey) =>
       dequal(
-        defaultFilters[filterKey as keyof FilterState],
-        currentFilters[filterKey as keyof FilterState],
+        defaultFilters[filterKey as keyof FilterOptions],
+        currentFilters[filterKey as keyof FilterOptions],
       )
         ? acc
         : acc + 1,

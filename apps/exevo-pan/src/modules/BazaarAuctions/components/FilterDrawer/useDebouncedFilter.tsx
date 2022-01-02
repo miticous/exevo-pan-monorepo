@@ -5,7 +5,7 @@ import { useFilters } from '../../contexts/useFilters'
 const DEBOUNCE_DELAY = 250
 
 function useDebouncedFilter<T>(
-  key: keyof FilterState,
+  key: keyof FilterOptions,
   initialValue: T,
 ): [value: T, setValue: (newValue: T) => void] {
   const { updateFilters } = useFilters()

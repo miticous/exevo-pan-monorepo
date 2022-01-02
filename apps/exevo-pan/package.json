@@ -11,6 +11,7 @@
     "test:all": "jest --silent --coverage"
   },
   "dependencies": {
+    "@popperjs/core": "^2.9.2",
     "chart.js": "^2.9.3",
     "dequal": "^2.0.2",
     "next": "11.0.1",
@@ -21,6 +22,7 @@
     "react": "17.0.2",
     "react-chartjs-2": "^2.9.0",
     "react-dom": "17.0.2",
+    "react-popper": "^2.2.5",
     "styled-components": "^5.3.0",
     "uuid": "^8.3.2"
   },
