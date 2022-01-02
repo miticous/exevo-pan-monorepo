@@ -51,7 +51,7 @@ describe('<Listbox />', () => {
     expect(optionA).toMatchInlineSnapshot(`
       <option
         aria-selected="false"
-        class="styles__Option-sc-am72ib-0 fZyPDg"
+        class="styles__Option-sc-1q1emy4-0 gHUAlZ"
         id="listbox-item-0"
         role="option"
         value="option A"
@@ -62,7 +62,7 @@ describe('<Listbox />', () => {
     expect(optionB).toMatchInlineSnapshot(`
       <option
         aria-selected="false"
-        class="styles__Option-sc-am72ib-0 eNIDEs"
+        class="styles__Option-sc-1q1emy4-0 gfiWWV"
         id="listbox-item-1"
         role="option"
         value="option B"
@@ -73,7 +73,7 @@ describe('<Listbox />', () => {
     expect(optionC).toMatchInlineSnapshot(`
       <option
         aria-selected="false"
-        class="styles__Option-sc-am72ib-0 fZyPDg"
+        class="styles__Option-sc-1q1emy4-0 gHUAlZ"
         id="listbox-item-2"
         role="option"
         value="option C"
@@ -96,7 +96,7 @@ describe('<Listbox />', () => {
     expect(optionA).toMatchInlineSnapshot(`
       <option
         aria-selected="false"
-        class="styles__Option-sc-am72ib-0 fZyPDg"
+        class="styles__Option-sc-1q1emy4-0 gHUAlZ"
         id="listbox-item-0"
         role="option"
         value="option A"
@@ -107,7 +107,7 @@ describe('<Listbox />', () => {
     expect(optionB).toMatchInlineSnapshot(`
       <option
         aria-selected="false"
-        class="styles__Option-sc-am72ib-0 fZyPDg"
+        class="styles__Option-sc-1q1emy4-0 gHUAlZ"
         id="listbox-item-1"
         role="option"
         value="option B"
@@ -118,7 +118,7 @@ describe('<Listbox />', () => {
     expect(optionC).toMatchInlineSnapshot(`
       <option
         aria-selected="false"
-        class="styles__Option-sc-am72ib-0 eNIDEs"
+        class="styles__Option-sc-1q1emy4-0 gfiWWV"
         id="listbox-item-2"
         role="option"
         value="option C"

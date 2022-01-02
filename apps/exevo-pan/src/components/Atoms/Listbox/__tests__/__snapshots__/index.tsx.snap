@@ -3,7 +3,7 @@
 exports[`<Listbox /> should render with no highlighted <Option /> 1`] = `
 <option
   aria-selected="false"
-  class="styles__Option-sc-am72ib-0 fZyPDg"
+  class="styles__Option-sc-1q1emy4-0 gHUAlZ"
   id="listbox-item-0"
   role="option"
   value="option A"
@@ -15,7 +15,7 @@ exports[`<Listbox /> should render with no highlighted <Option /> 1`] = `
 exports[`<Listbox /> should render with no highlighted <Option /> 2`] = `
 <option
   aria-selected="false"
-  class="styles__Option-sc-am72ib-0 fZyPDg"
+  class="styles__Option-sc-1q1emy4-0 gHUAlZ"
   id="listbox-item-1"
   role="option"
   value="option B"
@@ -27,7 +27,7 @@ exports[`<Listbox /> should render with no highlighted <Option /> 2`] = `
 exports[`<Listbox /> should render with no highlighted <Option /> 3`] = `
 <option
   aria-selected="false"
-  class="styles__Option-sc-am72ib-0 fZyPDg"
+  class="styles__Option-sc-1q1emy4-0 gHUAlZ"
   id="listbox-item-2"
   role="option"
   value="option C"

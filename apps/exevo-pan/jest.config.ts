@@ -1,7 +1,8 @@
 export default {
   testEnvironment: 'jsdom',
   preset: 'ts-jest',
-  setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
+  rootDir: '../..',
+  setupFilesAfterEnv: ['<rootDir>/apps/exevo-pan/setupTests.js'],
   moduleDirectories: ['node_modules', 'src'],
   testPathIgnorePatterns: [
     '<rootDir>/node_modules/',
@@ -13,7 +14,8 @@ export default {
     '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
   },
   moduleNameMapper: {
-    '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/__mocks__/fileMock.js',
+    '\\.(jpg|jpeg|png|gif|svg)$':
+      '<rootDir>/apps/exevo-pan/__mocks__/fileMock.js',
   },
   collectCoverage: true,
   collectCoverageFrom: [

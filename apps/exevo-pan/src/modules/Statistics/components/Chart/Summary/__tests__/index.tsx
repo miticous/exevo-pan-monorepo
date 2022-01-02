@@ -31,7 +31,7 @@ describe('<Summary />', () => {
     expect(screen.getByLabelText('Upwards trend')).toMatchInlineSnapshot(`
       <image
         aria-label="Upwards trend"
-        class="styles__TrendIcon-sc-zf1m03-3 efoYRJ"
+        class="styles__TrendIcon-sc-5rbl8j-3 bRQjW"
       />
     `)
 
