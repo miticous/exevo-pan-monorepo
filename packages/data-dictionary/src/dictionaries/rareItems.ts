@@ -59,6 +59,6 @@ export const scrapingTokens = lowerCaseKeys({
   'Yellow Rose': 'Yellow Rose',
 })
 
-export const tokens = Object.values(scrapingTokens)
+export const tokens: string[] = Object.values(scrapingTokens)
 
 export const dictionary = dictionaryFactory(tokens)

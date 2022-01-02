@@ -26,6 +26,6 @@ export const scrapingTokens = lowerCaseKeys({
   'Powerful Snake Skin': 'Earth Protection',
 })
 
-export const tokens = Object.values(scrapingTokens)
+export const tokens: string[] = Object.values(scrapingTokens)
 
 export const dictionary = dictionaryFactory(tokens)

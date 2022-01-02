@@ -331,6 +331,6 @@ export const outfits: OutfitToken[] = [
 
 export const scrapingTokens = lowerCaseKeys(nameableToScrapingTokens(outfits))
 
-export const tokens = Object.values(scrapingTokens)
+export const tokens: string[] = Object.values(scrapingTokens)
 
 export const dictionary = dictionaryFactory(tokens)

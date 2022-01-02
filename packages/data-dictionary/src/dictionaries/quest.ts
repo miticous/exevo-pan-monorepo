@@ -41,8 +41,8 @@ export const scrapingTokens = lowerCaseKeys({
   'His Days are Counted': 'Dangerous Depths (Warzone 5)',
   'Duked it Out': 'Dangerous Depths (Warzone 6)',
   'Soul War': 'Soul War',
-} as const)
+})
 
-export const tokens = Object.values(scrapingTokens)
+export const tokens: string[] = Object.values(scrapingTokens)
 
 export const dictionary = dictionaryFactory(tokens)

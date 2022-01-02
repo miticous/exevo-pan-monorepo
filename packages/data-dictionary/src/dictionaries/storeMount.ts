@@ -525,6 +525,6 @@ const mounts: MountToken[] = [
 
 export const scrapingTokens = lowerCaseKeys(nameableToScrapingTokens(mounts))
 
-export const tokens = Object.values(scrapingTokens)
+export const tokens: string[] = Object.values(scrapingTokens)
 
 export const dictionary = dictionaryFactory(tokens)
