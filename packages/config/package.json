@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "files": [
+    "eslint-node.js",
     "eslint-react.js"
   ],
   "dependencies": {
