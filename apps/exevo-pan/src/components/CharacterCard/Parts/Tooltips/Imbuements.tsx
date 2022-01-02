@@ -1,10 +1,12 @@
 import { useTranslations } from 'contexts/useTranslation'
 import { useMemo } from 'react'
 import { Tooltip } from 'components/Organisms'
-import { tokens } from 'DataDictionary/dictionaries/imbuement'
+import { imbuement } from 'data-dictionary'
 import ListedItems from './ListedItems'
 import * as S from './styles'
 import { TooltipProps } from './types'
+
+const { tokens } = imbuement
 
 const CharacterImbuements = ({
   items,

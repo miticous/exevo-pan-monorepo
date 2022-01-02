@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import * as faker from 'faker'
-import { rareItem } from 'DataDictionary/dictionaries'
+import { rareItem } from 'data-dictionary'
 import { randomAuctionId } from './CharacterMaker'
 import { rareItems } from '../constants'
 import { samplesFrom } from '../utils'

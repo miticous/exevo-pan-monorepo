@@ -7,7 +7,7 @@ import {
   rareAchievement,
   mount,
   storeMount,
-} from 'DataDictionary/dictionaries'
+} from 'data-dictionary'
 import { auctions } from '../../constants'
 import { samplesFrom } from '../../utils'
 import { randomServerId } from '../serverMaker'

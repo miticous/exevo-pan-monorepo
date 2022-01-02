@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
 import { renderWithProviders, randomDataset } from 'utils/test'
-import { charm, imbuement, quest } from 'DataDictionary/dictionaries'
+import { charm, imbuement, quest } from 'data-dictionary'
 import ListedItems from '../ListedItems'
 
 const { characterData } = randomDataset()
