@@ -1,12 +1,4 @@
 module.exports = {
-  settings: {
-    'import/resolver': {
-      node: {
-        paths: ['src'],
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-    },
-  },
   env: {
     browser: true,
     es2021: true,
@@ -14,7 +6,6 @@ module.exports = {
     jest: true,
   },
   extends: [
-    'plugin:import/typescript',
     'plugin:react/recommended',
     'airbnb',
     'plugin:@typescript-eslint/recommended',
@@ -32,6 +23,7 @@ module.exports = {
   rules: {
     'prettier/prettier': 'error',
     'import/extensions': 'off',
+    'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
     'no-nested-ternary': 'off',
     '@typescript-eslint/no-empty-function': 'off',
