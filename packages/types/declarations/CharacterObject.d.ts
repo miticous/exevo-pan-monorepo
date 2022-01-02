@@ -1,4 +1,4 @@
-export declare interface CharacterSkillsObject {
+declare interface CharacterSkillsObject {
   magic: number
   club: number
   fist: number
@@ -9,12 +9,12 @@ export declare interface CharacterSkillsObject {
   shielding: number
 }
 
-export declare type Outfit = {
+declare type Outfit = {
   name: string
   type: number
 }
 
-export declare interface CharacterObject {
+declare interface CharacterObject {
   id: number
   nickname: string
   auctionEnd: number
@@ -39,4 +39,4 @@ export declare interface CharacterObject {
   serverData: ServerObject
 }
 
-export declare type PartialCharacterObject = Omit<CharacterObject, 'serverData'>
+declare type PartialCharacterObject = Omit<CharacterObject, 'serverData'>

@@ -1,11 +1,11 @@
-export declare type RareItemObject = number[]
+declare type RareItemObject = number[]
 
-export declare type RareItemData = Record<string, RareItemObject>
+declare type RareItemData = Record<string, RareItemObject>
 
-export declare type RareItemBlock = {
+declare type RareItemBlock = {
   name: string
   lastPageIndex: number
   ids: number[]
 }
 
-export declare type RareItemBlockCollection = Record<string, RareItemBlock>
+declare type RareItemBlockCollection = Record<string, RareItemBlock>

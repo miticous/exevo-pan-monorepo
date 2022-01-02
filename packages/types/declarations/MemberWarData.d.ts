@@ -1,6 +1,6 @@
-export declare type MiniMemberWarData = [string, number, number, number, number]
+declare type MiniMemberWarData = [string, number, number, number, number]
 
-export declare type MemberWarData = {
+declare type MemberWarData = {
   nickname: string
   vocation: string
   vocationId: number

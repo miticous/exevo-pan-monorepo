@@ -1,4 +1,4 @@
-export declare interface Option {
-  name: string;
-  value: string;
+declare interface Option {
+  name: string
+  value: string
 }

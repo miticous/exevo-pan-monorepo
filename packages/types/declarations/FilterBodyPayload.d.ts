@@ -1,14 +1,14 @@
-export declare type PaginationOptions = {
+declare declare type PaginationOptions = {
   pageIndex: number
   pageSize: number
 }
 
-export declare type SortOptions = {
+declare declare type SortOptions = {
   sortingMode: number
   descendingOrder: boolean
 }
 
-export declare type FilterBodyPayload = {
+declare declare type FilterBodyPayload = {
   paginationOptions: PaginationOptions
   sortOptions: SortOptions
   filterOptions: FilterOptions

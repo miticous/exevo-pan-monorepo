@@ -1,4 +1,4 @@
-export declare interface PageData {
+declare interface PageData {
   pageIndex: number
   totalItems: number
   startOffset: number
@@ -7,7 +7,7 @@ export declare interface PageData {
   hasNext: boolean
 }
 
-export declare interface PaginatedData<T> extends PageData {
+declare interface PaginatedData<T> extends PageData {
   page: T[]
   sortingMode: number
   descendingOrder: boolean

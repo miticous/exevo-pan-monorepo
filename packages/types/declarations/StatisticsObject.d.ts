@@ -1,21 +1,21 @@
-export declare type MonthlySummary = {
+declare type MonthlySummary = {
   current: number
   lastMonth: number[]
 }
 
-export declare type CharacterInfoKey = Partial<
+declare type CharacterInfoKey = Partial<
   Omit<PartialCharacterObject, 'id' | 'nickname' | 'skills'>
 > &
   Partial<CharacterSkillsObject>
 
-  export declare interface CharacterInfo extends CharacterInfoKey {
+declare interface CharacterInfo extends CharacterInfoKey {
   id: number
   nickname: string
 }
 
-export declare type DistributionData = Record<string, number>
+declare type DistributionData = Record<string, number>
 
-export declare type StatisticsData = {
+declare type StatisticsData = {
   totalRevenue: MonthlySummary
   totalTibiaCoins: MonthlySummary
   successRate: number

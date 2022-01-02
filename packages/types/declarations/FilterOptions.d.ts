@@ -1,9 +1,9 @@
-export type VocationOptions = 0 | 1 | 2 | 3 | 4
-export type PvpOptions = 0 | 1 | 2 | 3 | 4
-export type LocationOptions = 0 | 1 | 2
-export type SkillOptions = 'axe' | 'club' | 'distance' | 'magic' | 'sword'
+declare type VocationOptions = 0 | 1 | 2 | 3 | 4
+declare type PvpOptions = 0 | 1 | 2 | 3 | 4
+declare type LocationOptions = 0 | 1 | 2
+declare type SkillOptions = 'axe' | 'club' | 'distance' | 'magic' | 'sword'
 
-export interface FilterOptions {
+declare interface FilterOptions {
   nicknameFilter: string
   vocation: Set<VocationOptions>
   pvp: Set<PvpOptions>
@@ -43,7 +43,7 @@ type FilterOptionsPrimitives = Pick<
   | 'soulwarAvailable'
 >
 
-export interface SerializedFilterOptions extends FilterOptionsPrimitives {
+declare interface SerializedFilterOptions extends FilterOptionsPrimitives {
   vocation: number[]
   pvp: number[]
   battleye: boolean[]

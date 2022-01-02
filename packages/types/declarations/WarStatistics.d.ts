@@ -1,16 +1,16 @@
-export declare type RecentFrag = {
+declare type RecentFrag = {
   nickname: string
   level: number
   vocation: string
   timeStamp: number
 }
 
-export declare type OnlineSnapshot = {
+declare type OnlineSnapshot = {
   count: number
   timeStamp: number
 }
 
-export declare type GuildMemberStats = {
+declare type GuildMemberStats = {
   nickname: string
   vocation: string
   level: number
@@ -18,12 +18,12 @@ export declare type GuildMemberStats = {
   kills: number
 }
 
-export declare type XPSnapshot = {
+declare type XPSnapshot = {
   xp: number
   timeStamp: number
 }
 
-export declare type WarStatistics = {
+declare type WarStatistics = {
   onlineCount: {
     guildA: OnlineSnapshot[]
     guildB: OnlineSnapshot[]
