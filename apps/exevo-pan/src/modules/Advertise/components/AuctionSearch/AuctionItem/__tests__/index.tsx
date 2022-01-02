@@ -1,9 +1,10 @@
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { renderWithProviders } from 'utils/test'
+import { vocation } from 'shared-utils'
 import { FormProvider } from '../../../../contexts/Form'
 import AuctionItem from '..'
-import { mockedRandomCharacter, vocationEnum } from './mock'
+import { mockedRandomCharacter } from './mock'
 
 const { nickname, level, vocationId, outfitId } = mockedRandomCharacter
 
@@ -46,7 +47,9 @@ describe('<AuctionItem />', () => {
 
     expect(screen.getByText(nickname)).toBeInTheDocument()
     expect(
-      screen.getByText(`Level ${level} - ${vocationEnum[vocationId]}`),
+      screen.getByText(
+        `Level ${level} - ${vocation.getFullName(vocationId, level)}`,
+      ),
     ).toBeInTheDocument()
   })
 })

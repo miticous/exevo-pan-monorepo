@@ -1,4 +1,4 @@
-import { unminifyGuildData } from '../../utils'
+import { unminifyGuildData } from 'shared-utils'
 import { mockedMembersData } from './mock'
 
 describe('utils/', () => {

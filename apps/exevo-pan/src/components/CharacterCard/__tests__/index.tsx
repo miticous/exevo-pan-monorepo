@@ -3,9 +3,9 @@ import { useRouter, NextRouter } from 'next/router'
 import { renderWithProviders, randomDataset } from 'utils/test'
 import { formatNumberWithCommas } from 'utils'
 import { imbuement, charm, quest } from 'data-dictionary'
+import { vocation } from 'shared-utils'
 import { routes } from 'Constants'
 import CharacterCard from '..'
-import { vocationEnum } from './utils'
 
 const { characterData } = randomDataset()
 const characterList = characterData.slice(0, 10)
@@ -20,11 +20,10 @@ describe('<CharacterCard />', () => {
 
     expect(
       screen.getByText(
-        `Level ${character.level} - ${
-          character.level >= 20
-            ? vocationEnum[character.vocationId]
-            : vocationEnum[`1${character.vocationId}`]
-        }`,
+        `Level ${character.level} - ${vocation.getFullName(
+          character.vocationId,
+          character.level,
+        )}`,
       ),
     ).toBeInTheDocument()
 
