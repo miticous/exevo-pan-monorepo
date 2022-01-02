@@ -1,6 +1,6 @@
 import { lowerCaseKeys, dictionaryFactory } from '../utils'
 
-export const scrapingTokens = lowerCaseKeys({
+export const constTokens = {
   'Amazon Armor': 'Amazon Armor',
   'Amazon Helmet': 'Amazon Helmet',
   'Amazon Shield': 'Amazon Shield',
@@ -57,7 +57,9 @@ export const scrapingTokens = lowerCaseKeys({
   'Warlord Sword': 'Warlord Sword',
   'Winged Helmet': 'Winged Helmet',
   'Yellow Rose': 'Yellow Rose',
-})
+} as const
+
+export const scrapingTokens = lowerCaseKeys(constTokens)
 
 export const tokens: string[] = Object.values(scrapingTokens)
 
