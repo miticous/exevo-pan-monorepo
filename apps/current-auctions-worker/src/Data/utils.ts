@@ -20,20 +20,6 @@ export const filterOldAuctions = (
   return mutatedArray
 }
 
-export const reduceRareItemData = (itemData: RareItemData): RareItemData => {
-  const newItemData: RareItemData = {}
-
-  const itemNames = Object.keys(itemData)
-  itemNames.forEach((item) => {
-    const auctionsArray = itemData[item]
-    if (auctionsArray.length > 0) {
-      newItemData[item] = auctionsArray
-    }
-  })
-
-  return newItemData
-}
-
 export const deserializeRequestBody = async (
   request: Request,
 ): Promise<FilterBodyPayload> => {

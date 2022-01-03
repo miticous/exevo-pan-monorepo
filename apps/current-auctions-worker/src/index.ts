@@ -1,6 +1,7 @@
-import { filterCharacters, applySort, paginateData } from 'auction-queries'
+import { applySort, paginateData } from 'auction-queries'
 import { auctions } from './Data/auctions'
 import { filterOldAuctions, deserializeRequestBody } from './Data/utils'
+import { filterCharacters } from './filterWrapper'
 import { headers } from './headers'
 
 addEventListener('fetch', (event) => {
