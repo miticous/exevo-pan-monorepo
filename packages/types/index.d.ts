@@ -3,6 +3,7 @@
 /// <reference path="declarations/Dictionary.d.ts" />
 /// <reference path="declarations/FilterBodyPayload.d.ts" />
 /// <reference path="declarations/FilterOptions.d.ts" />
+/// <reference path="declarations/FilterSchema.d.ts" />
 /// <reference path="declarations/MemberWarData.d.ts" />
 /// <reference path="declarations/Option.d.ts" />
 /// <reference path="declarations/PaginatedData.d.ts" />
