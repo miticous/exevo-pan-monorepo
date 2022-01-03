@@ -1,7 +1,9 @@
 import * as schema from './schemas'
 import { AuctionTest, FilterCharactersOptions } from './types'
 
-const filterSchema = Object.values(schema)
+const filterSchema = Object.values(schema).filter(
+  (item) => typeof item !== 'boolean',
+)
 
 const buildFilters = (filters: FilterOptions): AuctionTest => {
   const filterTests = filterSchema
