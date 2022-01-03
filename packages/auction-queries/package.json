@@ -1,0 +1,20 @@
+{
+  "name": "auction-queries",
+  "version": "0.0.0",
+  "description": "Querying functions for Char Bazaar",
+  "main": "dist",
+  "author": "xandjiji <xandjiji@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist/ && tsc",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/exevo-pan": "*",
+    "config": "*",
+    "typescript": "4.3.5"
+  }
+}
