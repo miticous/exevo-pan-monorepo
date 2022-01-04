@@ -29,34 +29,3 @@ declare interface FilterOptions {
   achievementSet: Set<string>
   soulwarAvailable: boolean
 }
-
-type FilterOptionsPrimitives = Pick<
-  FilterOptions,
-  | 'nicknameFilter'
-  | 'minLevel'
-  | 'maxLevel'
-  | 'minSkill'
-  | 'maxSkill'
-  | 'rareNick'
-  | 'addon'
-  | 'sex'
-  | 'soulwarAvailable'
->
-
-declare interface SerializedFilterOptions extends FilterOptionsPrimitives {
-  vocation: number[]
-  pvp: number[]
-  battleye: boolean[]
-  location: number[]
-  serverSet: string[]
-  skillKey: string[]
-  imbuementsSet: string[]
-  charmsSet: string[]
-  itemSet: string[]
-  questSet: string[]
-  outfitSet: string[]
-  storeOutfitSet: string[]
-  mountSet: string[]
-  storeMountSet: string[]
-  achievementSet: string[]
-}

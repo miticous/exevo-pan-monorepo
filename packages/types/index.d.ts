@@ -1,7 +1,8 @@
+/// <reference path="contracts/Filters.d.ts" />
+
 /// <reference path="declarations/AdvertisePurchase.d.ts" />
 /// <reference path="declarations/CharacterObject.d.ts" />
 /// <reference path="declarations/Dictionary.d.ts" />
-/// <reference path="declarations/FilterBodyPayload.d.ts" />
 /// <reference path="declarations/FilterOptions.d.ts" />
 /// <reference path="declarations/FilterSchema.d.ts" />
 /// <reference path="declarations/MemberWarData.d.ts" />
