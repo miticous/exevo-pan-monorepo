@@ -1,4 +1,6 @@
-import { DEFAULT_FILTER_OPTIONS } from '../../utils'
+import { contracts } from 'shared-utils'
+
+const { DEFAULT_FILTER_OPTIONS } = contracts.filters.defaults
 
 const filterSkip: FilterSkip = ({ minLevel, maxLevel }): boolean =>
   minLevel === DEFAULT_FILTER_OPTIONS.minLevel &&
