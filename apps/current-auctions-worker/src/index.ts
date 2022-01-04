@@ -1,6 +1,7 @@
 import { applySort, paginateData } from 'auction-queries'
+import { contracts } from 'shared-utils'
 import { auctions } from './Data/auctions'
-import { filterOldAuctions, deserializeRequestBody } from './Data/utils'
+import { filterOldAuctions } from './utils'
 import { filterCharacters } from './filterWrapper'
 import { headers } from './headers'
 
@@ -11,8 +12,9 @@ addEventListener('fetch', (event) => {
 async function handleRequest(request: Request): Promise<Response> {
   const currentAuctions = filterOldAuctions(auctions, +new Date() / 1000)
 
-  const { paginationOptions, sortOptions, filterOptions } =
-    await deserializeRequestBody(request)
+  const serializedBody: SerializedFilterBody = await request.json()
+  const { filterOptions, sortOptions, paginationOptions } =
+    contracts.filters.utils.deserializeBody(serializedBody)
 
   const filteredAuctions = filterCharacters({
     auctions: currentAuctions,
