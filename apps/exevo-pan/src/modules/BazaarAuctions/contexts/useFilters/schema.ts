@@ -1,3 +1,5 @@
+import { contracts } from 'shared-utils'
+
 const encodeSet = (set: Set<boolean | number | string>): string =>
   [...set].join(',')
 const decodeSet = (
@@ -24,139 +26,141 @@ const decodeStringSet = (encodedValue: string): Set<string> =>
 const decodeNumber = (encodedValue: string): number => Number(encodedValue)
 const decodeBoolean = (encodedValue: string): boolean => encodedValue === 'true'
 
+const { DEFAULT_FILTER_OPTIONS } = contracts.filters.defaults
+
 export const filterSchema = [
   {
     key: 'nicknameFilter',
-    defaultValue: '',
+    defaultValue: DEFAULT_FILTER_OPTIONS.nicknameFilter,
   },
   {
     key: 'vocation',
-    defaultValue: new Set<0 | 1 | 2 | 3 | 4>([]),
+    defaultValue: DEFAULT_FILTER_OPTIONS.vocation,
     encode: encodeSet,
     decode: decodeNumberSet,
   },
   {
     key: 'pvp',
-    defaultValue: new Set<0 | 1 | 2 | 3 | 4>([]),
+    defaultValue: DEFAULT_FILTER_OPTIONS.pvp,
     encode: encodeSet,
     decode: decodeNumberSet,
   },
   {
     key: 'battleye',
-    defaultValue: new Set<boolean>([]),
+    defaultValue: DEFAULT_FILTER_OPTIONS.battleye,
     encode: encodeSet,
     decode: decodeBooleanSet,
   },
   {
     key: 'location',
-    defaultValue: new Set<0 | 1 | 2>([]),
+    defaultValue: DEFAULT_FILTER_OPTIONS.location,
     encode: encodeSet,
     decode: decodeNumberSet,
   },
   {
     key: 'serverSet',
-    defaultValue: new Set<string>([]),
+    defaultValue: DEFAULT_FILTER_OPTIONS.serverSet,
     encode: encodeSet,
     decode: decodeStringSet,
   },
   {
     key: 'minLevel',
-    defaultValue: 8,
+    defaultValue: DEFAULT_FILTER_OPTIONS.minLevel,
     decode: decodeNumber,
   },
   {
     key: 'maxLevel',
-    defaultValue: 2000,
+    defaultValue: DEFAULT_FILTER_OPTIONS.maxLevel,
     decode: decodeNumber,
   },
   {
     key: 'minSkill',
-    defaultValue: 10,
+    defaultValue: DEFAULT_FILTER_OPTIONS.minSkill,
     decode: decodeNumber,
   },
   {
     key: 'maxSkill',
-    defaultValue: 150,
+    defaultValue: DEFAULT_FILTER_OPTIONS.maxSkill,
     decode: decodeNumber,
   },
   {
     key: 'addon',
-    defaultValue: 3,
+    defaultValue: DEFAULT_FILTER_OPTIONS.addon,
     decode: decodeNumber,
   },
   {
     key: 'sex',
-    defaultValue: false,
+    defaultValue: DEFAULT_FILTER_OPTIONS.sex,
     decode: decodeBoolean,
   },
   {
     key: 'skillKey',
-    defaultValue: new Set<'axe' | 'club' | 'distance' | 'magic' | 'sword'>([]),
+    defaultValue: DEFAULT_FILTER_OPTIONS.skillKey,
     encode: encodeSet,
     decode: decodeStringSet,
   },
   {
     key: 'imbuementsSet',
-    defaultValue: new Set<string>([]),
+    defaultValue: DEFAULT_FILTER_OPTIONS.imbuementsSet,
     encode: encodeSet,
     decode: decodeStringSet,
   },
   {
     key: 'charmsSet',
-    defaultValue: new Set<string>([]),
+    defaultValue: DEFAULT_FILTER_OPTIONS.charmsSet,
     encode: encodeSet,
     decode: decodeStringSet,
   },
   {
     key: 'itemSet',
-    defaultValue: new Set<string>([]),
+    defaultValue: DEFAULT_FILTER_OPTIONS.charmsSet,
     encode: encodeSet,
     decode: decodeStringSet,
   },
   {
     key: 'rareNick',
-    defaultValue: false,
+    defaultValue: DEFAULT_FILTER_OPTIONS.rareNick,
     decode: decodeBoolean,
   },
   {
     key: 'questSet',
-    defaultValue: new Set<string>([]),
+    defaultValue: DEFAULT_FILTER_OPTIONS.questSet,
     encode: encodeSet,
     decode: decodeStringSet,
   },
   {
     key: 'outfitSet',
-    defaultValue: new Set<string>([]),
+    defaultValue: DEFAULT_FILTER_OPTIONS.outfitSet,
     encode: encodeSet,
     decode: decodeStringSet,
   },
   {
     key: 'storeOutfitSet',
-    defaultValue: new Set<string>([]),
+    defaultValue: DEFAULT_FILTER_OPTIONS.storeOutfitSet,
     encode: encodeSet,
     decode: decodeStringSet,
   },
   {
     key: 'mountSet',
-    defaultValue: new Set<string>([]),
+    defaultValue: DEFAULT_FILTER_OPTIONS.mountSet,
     encode: encodeSet,
     decode: decodeStringSet,
   },
   {
     key: 'storeMountSet',
-    defaultValue: new Set<string>([]),
+    defaultValue: DEFAULT_FILTER_OPTIONS.storeMountSet,
     encode: encodeSet,
     decode: decodeStringSet,
   },
   {
     key: 'achievementSet',
-    defaultValue: new Set<string>([]),
+    defaultValue: DEFAULT_FILTER_OPTIONS.achievementSet,
     encode: encodeSet,
     decode: decodeStringSet,
   },
   {
     key: 'soulwarAvailable',
-    defaultValue: false,
+    defaultValue: DEFAULT_FILTER_OPTIONS.soulwarAvailable,
     decode: decodeBoolean,
   },
 ]

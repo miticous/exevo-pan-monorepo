@@ -8,13 +8,14 @@ import {
 } from 'react'
 import { useIsMounted } from 'hooks'
 import { AuctionsClient } from 'services'
-import { DEFAULT_FILTER_STATE } from 'services/Auctions/defaults'
+import { contracts } from 'shared-utils'
 import { endpoints } from 'Constants'
 import AuctionsReducer from './reducer'
 import { DEFAULT_STATE, PAGE_SIZE } from './schema'
 import { AuctionsContextValues, AuctionsProviderProps } from './types'
 
 const AuctionsContext = createContext<AuctionsContextValues>(DEFAULT_STATE)
+const { DEFAULT_FILTER_OPTIONS } = contracts.filters.defaults
 
 export const AuctionsProvider = ({
   initialPage,
@@ -45,7 +46,7 @@ export const AuctionsProvider = ({
           pageSize: PAGE_SIZE,
         },
         filterOptions: {
-          ...DEFAULT_FILTER_STATE,
+          ...DEFAULT_FILTER_OPTIONS,
           nicknameFilter: newNickname,
         },
         endpoint: endpoints.CURRENT_AUCTIONS,

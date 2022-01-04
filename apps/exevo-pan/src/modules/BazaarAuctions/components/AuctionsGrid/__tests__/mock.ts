@@ -1,8 +1,10 @@
 import { randomDataset } from 'utils/test'
+import { contracts } from 'shared-utils'
 import { AuctionsContextValues } from '../../../contexts/useAuctions/types'
 import { FiltersContextValues } from '../../../contexts/useFilters/types'
-import { DEFAULT_FILTER_STATE } from '../../../../../services/Auctions/defaults'
 import { PAGE_SIZE } from '..'
+
+const { DEFAULT_FILTER_OPTIONS } = contracts.filters.defaults
 
 const { characterData } = randomDataset()
 
@@ -34,8 +36,8 @@ export const DEFAULT_AUCTIONS_STATE: AuctionsContextValues = {
 
 export const DEFAULT_FILTERS_STATE: FiltersContextValues = {
   activeFilterCount: 0,
-  defaultValues: DEFAULT_FILTER_STATE,
-  filterState: DEFAULT_FILTER_STATE,
+  defaultValues: DEFAULT_FILTER_OPTIONS,
+  filterState: DEFAULT_FILTER_OPTIONS,
   toggleAllOptions: () => {},
   updateFilters: () => {},
   dispatch: () => {},

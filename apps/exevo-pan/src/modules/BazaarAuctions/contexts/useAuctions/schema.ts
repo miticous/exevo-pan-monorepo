@@ -1,4 +1,8 @@
+import { contracts } from 'shared-utils'
 import { AuctionsContextValues } from './types'
+
+const { DEFAULT_SORT_OPTIONS, DEFAULT_PAGINATION_OPTIONS } =
+  contracts.filters.defaults
 
 export const DEFAULT_STATE: AuctionsContextValues = {
   loading: false,
@@ -12,8 +16,8 @@ export const DEFAULT_STATE: AuctionsContextValues = {
     hasNext: false,
     hasPrev: false,
   },
-  sortingMode: 0,
-  descendingOrder: false,
+  sortingMode: DEFAULT_SORT_OPTIONS.sortingMode,
+  descendingOrder: DEFAULT_SORT_OPTIONS.descendingOrder,
   shouldDisplayHighlightedAuctions: true,
   handlePaginatorFetch: async () => {},
   dispatch: () => {},
@@ -40,4 +44,4 @@ export const buildSchema = (
   },
 ]
 
-export const PAGE_SIZE = 10
+export const PAGE_SIZE = DEFAULT_PAGINATION_OPTIONS.pageSize

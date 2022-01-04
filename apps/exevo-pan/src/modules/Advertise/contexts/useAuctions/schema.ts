@@ -1,4 +1,7 @@
+import { contracts } from 'shared-utils'
 import { AuctionsContextValues } from './types'
+
+const { DEFAULT_PAGINATION_OPTIONS } = contracts.filters.defaults
 
 export const DEFAULT_STATE: AuctionsContextValues = {
   loading: false,
@@ -16,4 +19,4 @@ export const DEFAULT_STATE: AuctionsContextValues = {
   handleNicknameFetch: async () => {},
 }
 
-export const PAGE_SIZE = 10
+export const PAGE_SIZE = DEFAULT_PAGINATION_OPTIONS.pageSize

@@ -1,25 +1,14 @@
 import { endpoints, paths } from 'Constants'
-import { serializeBody, buildHeaders } from './utils'
-import {
-  DEFAULT_PAGINATION_OPTIONS,
-  DEFAULT_SORT_OPTIONS,
-  DEFAULT_FILTER_STATE,
-} from './defaults'
+import { contracts } from 'shared-utils'
+import { buildHeaders } from './utils'
 import { FetchAuctionPageParameters, CacheObject } from './types'
 
 const CACHE_MAX_AGE = 180000
-
-const EMPTY_RESPONSE: PaginatedData<CharacterObject> = {
-  page: [],
-  pageIndex: 0,
-  totalItems: 0,
-  startOffset: 0,
-  endOffset: 0,
-  hasPrev: false,
-  hasNext: false,
-  sortingMode: 0,
-  descendingOrder: false,
-}
+const {
+  DEFAULT_PAGINATION_OPTIONS,
+  DEFAULT_SORT_OPTIONS,
+  DEFAULT_FILTER_OPTIONS,
+} = contracts.filters.defaults
 
 export default class AuctionsClient {
   static cache: CacheObject = {}
@@ -47,14 +36,14 @@ export default class AuctionsClient {
   static async fetchAuctionPage({
     paginationOptions = DEFAULT_PAGINATION_OPTIONS,
     sortOptions = DEFAULT_SORT_OPTIONS,
-    filterOptions = DEFAULT_FILTER_STATE,
+    filterOptions = DEFAULT_FILTER_OPTIONS,
     endpoint,
   }: FetchAuctionPageParameters): Promise<PaginatedData<CharacterObject>> {
-    const bodyPayload = serializeBody(
+    const bodyPayload = contracts.filters.utils.serializeBody({
       paginationOptions,
       sortOptions,
       filterOptions,
-    )
+    })
 
     const cachedResult = this.getCache(bodyPayload, endpoint)
     if (cachedResult) return cachedResult
@@ -65,7 +54,7 @@ export default class AuctionsClient {
       body: bodyPayload,
     })
 
-    const data: PaginatedData<CharacterObject> = await response.json()
+    const data: FilterResponse = await response.json()
     this.setCache(bodyPayload, endpoint, data)
 
     return data
