@@ -4,6 +4,8 @@ import {
 } from 'shared-utils/dist/contracts/Filters/defaults'
 import { AuctionsContextValues } from './types'
 
+export { buildSchema } from 'shared-utils/dist/contracts/Filters/schemas/sortUrl'
+
 export const DEFAULT_STATE: AuctionsContextValues = {
   loading: false,
   highlightedAuctions: [],
@@ -22,26 +24,5 @@ export const DEFAULT_STATE: AuctionsContextValues = {
   handlePaginatorFetch: async () => {},
   dispatch: () => {},
 }
-
-export const buildSchema = (
-  orderByDefault: number,
-  descendingDefault: boolean,
-) => [
-  {
-    key: 'currentPage',
-    defaultValue: 1,
-    decode: (value: string) => Number(decodeURIComponent(value)),
-  },
-  {
-    key: 'orderBy',
-    defaultValue: orderByDefault,
-    decode: (value: string) => Number(decodeURIComponent(value)),
-  },
-  {
-    key: 'descending',
-    defaultValue: descendingDefault,
-    decode: (value: string) => decodeURIComponent(value) === 'true',
-  },
-]
 
 export const PAGE_SIZE = DEFAULT_PAGINATION_OPTIONS.pageSize

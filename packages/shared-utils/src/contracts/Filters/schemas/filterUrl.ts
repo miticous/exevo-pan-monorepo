@@ -1,4 +1,4 @@
-import { DEFAULT_FILTER_OPTIONS } from 'shared-utils/dist/contracts/Filters/defaults'
+import { DEFAULT_FILTER_OPTIONS } from '../defaults'
 
 const encodeSet = (set: Set<boolean | number | string>): string =>
   [...set].join(',')

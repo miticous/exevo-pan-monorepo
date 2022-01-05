@@ -6,8 +6,8 @@ import {
   useCallback,
 } from 'react'
 import { urlParametersState } from 'utils'
+import { filterSchema } from 'shared-utils/dist/contracts/Filters/schemas/filterUrl'
 import { countActiveFilters } from './utils'
-import { filterSchema } from './schema'
 import FilterReducer from './reducer'
 import { FiltersContextValues } from './types'
 
