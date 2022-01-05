@@ -6,14 +6,13 @@
   "license": "Unlicense",
   "scripts": {
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-    "dev": "NODE_ENV=development sucrase-node src",
+    "dev": "PORT=4000 sucrase-node src",
     "build": "rm -rf dist && sucrase ./src -d ./dist --transforms typescript,imports && cp ./src/Data/*.json ./dist/Data && cp ./src/Data/*.jsonl ./dist/Data",
-    "start": "NODE_ENV=production node ./dist"
+    "start": "PORT=4000 node ./dist"
   },
   "dependencies": {
     "auction-queries": "*",
     "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "logging": "*",
     "shared-utils": "*"

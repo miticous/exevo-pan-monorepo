@@ -1,4 +1,3 @@
-import dotenv from 'dotenv'
 import express from 'express'
 import cors from 'cors'
 import { deserializeBody } from 'shared-utils/dist/contracts/Filters/utils'
@@ -7,7 +6,7 @@ import { broadcast, coloredText } from 'logging'
 import { loadAuctions } from './Data/historyAuctions'
 import { preloadCache, applySort, filterCharacters } from './cachedWrapper'
 
-dotenv.config()
+const { PORT } = process.env
 
 const main = async () => {
   const auctions = await loadAuctions()
@@ -41,11 +40,12 @@ const main = async () => {
     response.json(responseBody)
   })
 
-  app.listen(process.env.PORT, () => {
+  app.listen(PORT, () => {
     broadcast(
-      `${coloredText('History Server', 'highlight')} is running at ${
-        process.env.BASE_URL
-      }`,
+      `${coloredText(
+        'History Server',
+        'highlight',
+      )} is running at http://localhost:${PORT}`,
       'success',
     )
   })
