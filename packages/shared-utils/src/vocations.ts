@@ -46,8 +46,18 @@ const getId = (name: string): number => {
   return VOCATION_IDS[key]
 }
 
+const getIdByRegex = (name: string): number => {
+  if (/knight/gi.test(name)) return VOCATION_IDS.KNIGHT
+  if (/paladin/gi.test(name)) return VOCATION_IDS.PALADIN
+  if (/sorcerer/gi.test(name)) return VOCATION_IDS.SORCERER
+  if (/druid/gi.test(name)) return VOCATION_IDS.DRUID
+
+  return VOCATION_IDS.NONE
+}
+
 export const vocation = {
   getName,
   getFullName,
   getId,
+  getIdByRegex,
 }
