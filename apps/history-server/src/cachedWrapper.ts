@@ -7,7 +7,7 @@ import {
   DEFAULT_FILTER_OPTIONS,
   DEFAULT_SERIALIZED_FILTER_OPTIONS,
 } from 'shared-utils/dist/contracts/Filters/defaults'
-import { TrackETA } from 'logging'
+import { broadcast, TrackETA } from 'logging'
 import Cache from './Data/cache'
 
 export const applySort: typeof baseSort = (
@@ -55,6 +55,8 @@ export const filterCharacters = ({
 }
 
 export const preloadCache = (auctions: CharacterObject[]): void => {
+  broadcast('Preloading cache....', 'neutral')
+
   const sortingModes = [0, 1, 2, 3]
   const descendingOrders = [false, true]
 
