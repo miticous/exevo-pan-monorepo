@@ -5,7 +5,7 @@
   "author": "xandjiji <xandjiji@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "sucrase-node src/History",
+    "dev": "sucrase-node src",
     "build": "sucrase ./src -d ./dist --transforms typescript,imports && cp ./src/Data/*.json ./dist/Data && cp ./src/Data/*.jsonl ./dist/Data",
     "start": "node ./dist"
   },
