@@ -3,6 +3,7 @@ import {
   filterCharacters as baseFilter,
 } from 'auction-queries'
 import { contracts } from 'shared-utils'
+import { TrackETA } from 'logging'
 import Cache from './Data/cache'
 
 const {
@@ -59,17 +60,12 @@ export const preloadCache = (auctions: CharacterObject[]): void => {
   const sortingModes = [0, 1, 2, 3]
   const descendingOrders = [false, true]
 
-  let iterationCount = 0
-  const iterations = sortingModes.length * descendingOrders.length
+  const OPERATIONS = sortingModes.length * descendingOrders.length
+  const task = new TrackETA(OPERATIONS, 'Preloading Cache')
 
   sortingModes.forEach((sortingMode) => {
     descendingOrders.forEach((descendingOrder) => {
-      iterationCount += 1
-      console.log(
-        `Preloading cache [${Math.round(
-          (iterationCount / iterations) * 100,
-        )}%]`,
-      )
+      task.incTask()
 
       const sortOptions: SortOptions = { sortingMode, descendingOrder }
       const sortedAuctions = applySort(auctions, sortOptions)
@@ -81,4 +77,5 @@ export const preloadCache = (auctions: CharacterObject[]): void => {
       })
     })
   })
+  task.finish()
 }

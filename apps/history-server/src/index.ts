@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import { contracts } from 'shared-utils'
 import { paginateData } from 'auction-queries'
+import { broadcast, coloredText } from 'logging'
 import { loadAuctions } from './Data/historyAuctions'
 import { preloadCache, applySort, filterCharacters } from './cachedWrapper'
 
@@ -39,7 +40,13 @@ const main = async () => {
   })
 
   app.listen(PORT, () => {
-    console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`)
+    broadcast(
+      `${coloredText(
+        'History Server',
+        'highlight',
+      )} is running at http://localhost:${PORT}`,
+      'success',
+    )
   })
 }
 
