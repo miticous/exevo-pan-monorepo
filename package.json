@@ -12,7 +12,8 @@
     "test": "turbo run test:all",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "clean": "turbo run clean && rm -rf node_modules"
+    "clean": "turbo run clean && rm -rf node_modules",
+    "dev:front": "NEXT_PUBLIC_FRONT_DEV=true turbo run dev --scope=exevo-pan"
   },
   "devDependencies": {
     "prettier": "^2.5.1",

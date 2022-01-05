@@ -1,13 +1,14 @@
-const isDev = process.env.NODE_ENV === 'development'
+const isLocal =
+  process.env.NODE_ENV === 'development' && !process.env.NEXT_PUBLIC_FRONT_DEV
 
 const LOCAL_AUCTIONS_ENDPOINT = 'http://localhost:8787'
 const LOCAL_HISTORY_ENDPOINT = 'http://localhost:4000'
 
 export const endpoints = {
-  CURRENT_AUCTIONS: isDev
+  CURRENT_AUCTIONS: isLocal
     ? LOCAL_AUCTIONS_ENDPOINT
     : 'https://auctions.exevopan.workers.dev',
-  HISTORY_AUCTIONS: isDev
+  HISTORY_AUCTIONS: isLocal
     ? LOCAL_HISTORY_ENDPOINT
     : 'https://history.service-exevopan.com',
   STATIC_DATA: 'https://static-exevopan.surge.sh',
