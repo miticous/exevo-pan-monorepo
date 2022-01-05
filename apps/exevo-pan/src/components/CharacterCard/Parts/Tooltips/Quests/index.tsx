@@ -1,7 +1,7 @@
 import { useTranslations } from 'contexts/useTranslation'
 import { useMemo } from 'react'
 import { Tooltip } from 'components/Organisms'
-import { tokens } from 'data-dictionary/dist/dictionaries/charm'
+import { tokens } from 'data-dictionary/dist/dictionaries/quest'
 import { utilitary, access, bosses, others } from './lists'
 import ListedItems from '../ListedItems'
 import * as S from '../styles'
