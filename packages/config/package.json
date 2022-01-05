@@ -1,8 +1,9 @@
 {
   "name": "config",
   "version": "0.0.0",
+  "author": "xandjiji <xandjiji@gmail.com>",
+  "license": "Unlicense",
   "main": "index.js",
-  "license": "MIT",
   "files": [
     "eslint-node.js",
     "eslint-react.js"

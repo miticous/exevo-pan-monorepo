@@ -1,7 +1,9 @@
 {
   "name": "current-auctions-worker",
-  "version": "1.0.0",
+  "version": "0.0.0",
+  "author": "xandjiji <xandjiji@gmail.com>",
   "description": "Exevo Pan Cloudflare Worker",
+  "license": "Unlicense",
   "main": "dist/worker.js",
   "scripts": {
     "build": "webpack",
@@ -11,8 +13,6 @@
     "dev": "wrangler dev",
     "deploy": "wrangler publish"
   },
-  "author": "xandjiji <xandjiji@gmail.com>",
-  "license": "MIT",
   "dependencies": {
     "auction-queries": "*",
     "shared-utils": "*"

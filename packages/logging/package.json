@@ -1,10 +1,10 @@
 {
   "name": "logging",
   "version": "0.0.0",
-  "description": "Logging utility for Exevo Pan backend jobs",
-  "main": "dist",
   "author": "xandjiji <xandjiji@gmail.com>",
-  "license": "MIT",
+  "description": "Logging utility for Exevo Pan backend jobs",
+  "license": "Unlicense",
+  "main": "dist",
   "files": [
     "dist"
   ],

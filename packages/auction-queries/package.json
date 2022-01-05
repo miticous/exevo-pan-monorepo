@@ -1,10 +1,10 @@
 {
   "name": "auction-queries",
   "version": "0.0.0",
-  "description": "Querying functions for Char Bazaar",
-  "main": "dist",
   "author": "xandjiji <xandjiji@gmail.com>",
-  "license": "MIT",
+  "description": "Querying functions for Char Bazaar",
+  "license": "Unlicense",
+  "main": "dist",
   "files": [
     "dist"
   ],

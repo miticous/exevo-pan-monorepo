@@ -1,9 +1,9 @@
 {
   "name": "history-server",
-  "version": "1.0.0",
-  "description": "Exevo Pan history auctions server",
+  "version": "0.0.0",
   "author": "xandjiji <xandjiji@gmail.com>",
-  "license": "MIT",
+  "description": "Exevo Pan history auctions server",
+  "license": "Unlicense",
   "scripts": {
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "NODE_ENV=development sucrase-node src",

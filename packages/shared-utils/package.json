@@ -1,10 +1,10 @@
 {
   "name": "shared-utils",
   "version": "0.0.0",
-  "description": "Shared utils for Exevo Pan",
-  "main": "dist",
   "author": "xandjiji <xandjiji@gmail.com>",
-  "license": "MIT",
+  "description": "Shared utils for Exevo Pan",
+  "license": "Unlicense",
+  "main": "dist",
   "files": [
     "dist"
   ],

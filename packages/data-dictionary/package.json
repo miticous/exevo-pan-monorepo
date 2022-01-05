@@ -1,10 +1,10 @@
 {
   "name": "data-dictionary",
   "version": "0.0.0",
-  "description": "Data dictionary for Exevo Pan",
-  "main": "dist",
   "author": "xandjiji <xandjiji@gmail.com>",
-  "license": "MIT",
+  "description": "Data dictionary for Exevo Pan",
+  "license": "Unlicense",
+  "main": "dist",
   "files": [
     "dist"
   ],
