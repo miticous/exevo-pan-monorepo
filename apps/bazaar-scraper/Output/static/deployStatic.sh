@@ -1,3 +1,3 @@
 #!/bin/bash
-cd ~/tibia-bazaar-scraper/Output/static/
+cd ~/exevo-pan/apps/bazaar-scraper/Output/static/
 surge ./ static-exevopan.surge.sh
