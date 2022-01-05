@@ -1,7 +1,14 @@
 {
-  "name": "exevo-pan-monorepo",
+  "name": "exevo-pan",
   "version": "0.0.0",
-  "private": true,
+  "author": "xandjiji <xandjiji@gmail.com>",
+  "description": "The entire Exevo Pan stack monorepo",
+  "license": "Unlicense",
+  "homepage": "https://exevopan.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xandjiji/exevo-pan"
+  },
   "workspaces": [
     "apps/*",
     "packages/*"
