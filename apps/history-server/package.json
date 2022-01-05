@@ -5,6 +5,7 @@
   "author": "xandjiji <xandjiji@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "sucrase-node src",
     "build": "sucrase ./src -d ./dist --transforms typescript,imports && cp ./src/Data/*.json ./dist/Data && cp ./src/Data/*.jsonl ./dist/Data",
     "start": "node ./dist"
