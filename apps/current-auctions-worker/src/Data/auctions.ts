@@ -1,4 +1,4 @@
-import { buildCharacterData } from 'shared-utils/dist/src/buildCharacterData'
+import { buildCharacterData } from 'shared-utils/dist/buildCharacterData'
 import characterData from './CurrentAuctions.json'
 import miniServerData from './ServerData.json'
 

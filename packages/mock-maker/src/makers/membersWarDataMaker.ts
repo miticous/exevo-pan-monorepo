@@ -1,5 +1,5 @@
 import * as faker from 'faker'
-import { unminifyGuildData } from 'shared-utils'
+import { unminifyGuildData } from 'shared-utils/dist/unminifyGuildData'
 
 const randomMiniMemberWarData = (): MiniMemberWarData => [
   faker.name.firstName(),

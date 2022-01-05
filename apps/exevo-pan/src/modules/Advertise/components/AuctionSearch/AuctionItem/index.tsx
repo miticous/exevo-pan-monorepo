@@ -1,4 +1,4 @@
-import { vocation } from 'shared-utils'
+import { vocation } from 'shared-utils/dist/vocations'
 import { useForm } from '../../../contexts/Form'
 import * as S from './styles'
 import { AuctionItemProps } from './types'

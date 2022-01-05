@@ -1,6 +1,4 @@
-import { contracts } from 'shared-utils'
-
-const { DEFAULT_FILTER_OPTIONS } = contracts.filters.defaults
+import { DEFAULT_FILTER_OPTIONS } from 'shared-utils/dist/contracts/Filters/defaults'
 
 const filterSkip: FilterSkip = ({ minSkill, maxSkill, skillKey }): boolean =>
   (minSkill === DEFAULT_FILTER_OPTIONS.minSkill &&

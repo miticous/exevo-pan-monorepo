@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { vocation as vocationHelper } from 'shared-utils'
+import { vocation as vocationHelper } from 'shared-utils/dist/vocations'
 
 interface SubtitleProps extends React.HTMLAttributes<HTMLSpanElement> {
   level: number

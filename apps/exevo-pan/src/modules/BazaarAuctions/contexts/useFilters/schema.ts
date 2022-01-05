@@ -1,4 +1,4 @@
-import { contracts } from 'shared-utils'
+import { DEFAULT_FILTER_OPTIONS } from 'shared-utils/dist/contracts/Filters/defaults'
 
 const encodeSet = (set: Set<boolean | number | string>): string =>
   [...set].join(',')
@@ -25,8 +25,6 @@ const decodeStringSet = (encodedValue: string): Set<string> =>
 
 const decodeNumber = (encodedValue: string): number => Number(encodedValue)
 const decodeBoolean = (encodedValue: string): boolean => encodedValue === 'true'
-
-const { DEFAULT_FILTER_OPTIONS } = contracts.filters.defaults
 
 export const filterSchema = [
   {

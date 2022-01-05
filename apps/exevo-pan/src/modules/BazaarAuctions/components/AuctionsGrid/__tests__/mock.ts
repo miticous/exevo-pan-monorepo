@@ -1,10 +1,8 @@
 import { randomDataset } from 'utils/test'
-import { contracts } from 'shared-utils'
+import { DEFAULT_FILTER_OPTIONS } from 'shared-utils/dist/contracts/Filters/defaults'
 import { AuctionsContextValues } from '../../../contexts/useAuctions/types'
 import { FiltersContextValues } from '../../../contexts/useFilters/types'
 import { PAGE_SIZE } from '..'
-
-const { DEFAULT_FILTER_OPTIONS } = contracts.filters.defaults
 
 const { characterData } = randomDataset()
 

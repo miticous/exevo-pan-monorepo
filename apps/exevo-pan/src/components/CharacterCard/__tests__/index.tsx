@@ -3,7 +3,7 @@ import { useRouter, NextRouter } from 'next/router'
 import { renderWithProviders, randomDataset } from 'utils/test'
 import { formatNumberWithCommas } from 'utils'
 import { imbuement, charm, quest } from 'data-dictionary'
-import { vocation } from 'shared-utils'
+import { vocation } from 'shared-utils/dist/vocations'
 import { routes } from 'Constants'
 import CharacterCard from '..'
 

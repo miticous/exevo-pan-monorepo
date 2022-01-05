@@ -1,7 +1,7 @@
 import { useTranslations } from 'contexts/useTranslation'
 import { useState, useCallback } from 'react'
 import CharacterCard from 'components/CharacterCard'
-import { contracts } from 'shared-utils'
+import { DEFAULT_PAGINATION_OPTIONS } from 'shared-utils/dist/contracts/Filters/defaults'
 import { useAuctions } from '../../contexts/useAuctions'
 import { useFilters } from '../../contexts/useFilters'
 import FilterDrawer from '../FilterDrawer'
@@ -10,8 +10,7 @@ import VirtualizedListView from './VirtualizedListView'
 import EmptyState from './EmptyState'
 import * as S from './styles'
 
-export const PAGE_SIZE =
-  contracts.filters.defaults.DEFAULT_PAGINATION_OPTIONS.pageSize
+export const PAGE_SIZE = DEFAULT_PAGINATION_OPTIONS.pageSize
 const ESTIMATED_HEIGHT = 479
 
 const AuctionsGrid = (): JSX.Element => {

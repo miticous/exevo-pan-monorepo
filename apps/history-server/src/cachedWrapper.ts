@@ -2,15 +2,13 @@ import {
   applySort as baseSort,
   filterCharacters as baseFilter,
 } from 'auction-queries'
-import { contracts } from 'shared-utils'
-import { TrackETA } from 'logging'
-import Cache from './Data/cache'
-
-const {
+import {
   DEFAULT_SORT_OPTIONS,
   DEFAULT_FILTER_OPTIONS,
   DEFAULT_SERIALIZED_FILTER_OPTIONS,
-} = contracts.filters.defaults
+} from 'shared-utils/dist/contracts/Filters/defaults'
+import { TrackETA } from 'logging'
+import Cache from './Data/cache'
 
 export const applySort: typeof baseSort = (
   oldData,

@@ -1,4 +1,4 @@
-import { buildCharacterData } from 'shared-utils'
+import { buildCharacterData } from 'shared-utils/dist/buildCharacterData'
 import { randomServerData } from './makers/serverMaker'
 import { randomCharacter } from './makers/CharacterMaker'
 import { randomItemData } from './makers/rareItemMaker'

@@ -1,5 +1,5 @@
 import { applySort, paginateData } from 'auction-queries'
-import { contracts } from 'shared-utils'
+import { deserializeBody } from 'shared-utils/dist/contracts/Filters/utils'
 import { auctions } from './Data/auctions'
 import { filterOldAuctions } from './utils'
 import { filterCharacters } from './filterWrapper'
@@ -14,7 +14,7 @@ async function handleRequest(request: Request): Promise<Response> {
 
   const serializedBody: SerializedFilterBody = await request.json()
   const { filterOptions, sortOptions, paginationOptions } =
-    contracts.filters.utils.deserializeBody(serializedBody)
+    deserializeBody(serializedBody)
 
   const filteredAuctions = filterCharacters({
     auctions: currentAuctions,

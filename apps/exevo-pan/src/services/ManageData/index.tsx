@@ -1,6 +1,6 @@
 import { getFromLocalStorage, saveToLocalStorage } from 'utils'
 import { endpoints, paths, localStorageKeys } from 'Constants'
-import { unminifyGuildData } from 'shared-utils'
+import { unminifyGuildData } from 'shared-utils/dist/unminifyGuildData'
 
 export default class ManageDataClient {
   static warStatisticsDataUrl = `${endpoints.WAR_DATA}${paths.WAR_STATISTICS}`

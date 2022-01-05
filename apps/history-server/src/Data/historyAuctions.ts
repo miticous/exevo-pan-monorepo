@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-syntax */
 import fs from 'fs'
 import readline from 'readline'
-import { buildCharacterData } from 'shared-utils'
+import { buildCharacterData } from 'shared-utils/dist/buildCharacterData'
 import miniServerData from './ServerData.json'
 
 const serverArray = Object.values(

@@ -1,8 +1,8 @@
-import { contracts } from 'shared-utils'
+import {
+  DEFAULT_SORT_OPTIONS,
+  DEFAULT_PAGINATION_OPTIONS,
+} from 'shared-utils/dist/contracts/Filters/defaults'
 import { AuctionsContextValues } from './types'
-
-const { DEFAULT_SORT_OPTIONS, DEFAULT_PAGINATION_OPTIONS } =
-  contracts.filters.defaults
 
 export const DEFAULT_STATE: AuctionsContextValues = {
   loading: false,

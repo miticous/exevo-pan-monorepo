@@ -1,14 +1,14 @@
 import { endpoints, paths } from 'Constants'
-import { contracts } from 'shared-utils'
+import { serializeBody } from 'shared-utils/dist/contracts/Filters/utils'
+import {
+  DEFAULT_PAGINATION_OPTIONS,
+  DEFAULT_SORT_OPTIONS,
+  DEFAULT_FILTER_OPTIONS,
+} from 'shared-utils/dist/contracts/Filters/defaults'
 import { buildHeaders } from './utils'
 import { FetchAuctionPageParameters, CacheObject } from './types'
 
 const CACHE_MAX_AGE = 180000
-const {
-  DEFAULT_PAGINATION_OPTIONS,
-  DEFAULT_SORT_OPTIONS,
-  DEFAULT_FILTER_OPTIONS,
-} = contracts.filters.defaults
 
 export default class AuctionsClient {
   static cache: CacheObject = {}
@@ -39,7 +39,7 @@ export default class AuctionsClient {
     filterOptions = DEFAULT_FILTER_OPTIONS,
     endpoint,
   }: FetchAuctionPageParameters): Promise<PaginatedData<CharacterObject>> {
-    const bodyPayload = contracts.filters.utils.serializeBody({
+    const bodyPayload = serializeBody({
       paginationOptions,
       sortOptions,
       filterOptions,

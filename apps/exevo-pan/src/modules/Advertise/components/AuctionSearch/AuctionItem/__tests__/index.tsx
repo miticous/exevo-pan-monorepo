@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { renderWithProviders } from 'utils/test'
-import { vocation } from 'shared-utils'
+import { vocation } from 'shared-utils/dist/vocations'
 import { FormProvider } from '../../../../contexts/Form'
 import AuctionItem from '..'
 import { mockedRandomCharacter } from './mock'
