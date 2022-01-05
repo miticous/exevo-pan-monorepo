@@ -19,6 +19,7 @@ export const applySort: typeof baseSort = (
     return cachedSort
   }
 
+  broadcast('Sort result was cached', 'neutral')
   const result = baseSort(oldData, sortOptions)
   Cache.setSortCache(sortOptions, result)
   return result
@@ -45,9 +46,11 @@ export const filterCharacters = ({
   )
 
   if (cachedResponse) {
+    broadcast('Filter cache hit', 'success')
     return cachedResponse
   }
 
+  broadcast('Filter result was cached', 'neutral')
   const result = baseFilter(options)
   Cache.setFilterCache(serializedFilterOptions, sortOptions, result)
 
