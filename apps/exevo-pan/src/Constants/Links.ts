@@ -1,8 +1,9 @@
+const isDev = process.env.NODE_ENV === 'development'
+
+const LOCAL_HISTORY_ENDPOINT = 'http://localhost:3000'
+
 export const links = {
-  CANONICAL:
-    process.env.NODE_ENV === 'development'
-      ? process.env.NEXT_PUBLIC_BASE_URL
-      : 'https://exevopan.com',
+  CANONICAL: isDev ? LOCAL_HISTORY_ENDPOINT : 'https://exevopan.com',
   EMAIL: 'mailto:xandjiji@gmail.com',
   LINKEDIN: 'https://www.linkedin.com/in/xandjiji',
   GITHUB_PROFILE: 'https://github.com/xandjiji',
