@@ -7,7 +7,7 @@ import {
   storeOutfit,
   mount,
   storeMount,
-} from 'data-dictionary'
+} from 'data-dictionary/dist/dictionaries'
 import { buildOption } from './utils'
 
 export const imbuementOptions = imbuement.tokens.map(buildOption)

@@ -1,6 +1,7 @@
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { imbuement, outfit } from 'data-dictionary'
+import * as imbuement from 'data-dictionary/dist/dictionaries/imbuement'
+import * as outfit from 'data-dictionary/dist/dictionaries/outfit'
 import { renderWithProviders } from 'utils/test'
 import { WrappedFilterDrawer } from './mock'
 

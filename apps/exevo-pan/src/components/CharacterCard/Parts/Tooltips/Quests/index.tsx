@@ -1,14 +1,12 @@
 import { useTranslations } from 'contexts/useTranslation'
 import { useMemo } from 'react'
 import { Tooltip } from 'components/Organisms'
-import { quest } from 'data-dictionary'
+import { tokens } from 'data-dictionary/dist/dictionaries/charm'
 import { utilitary, access, bosses, others } from './lists'
 import ListedItems from '../ListedItems'
 import * as S from '../styles'
 import { Grid, Group, Title } from './styles'
 import { TooltipProps } from '../types'
-
-const { tokens } = quest
 
 const CharacterQuests = ({ items, ...props }: TooltipProps): JSX.Element => {
   const {

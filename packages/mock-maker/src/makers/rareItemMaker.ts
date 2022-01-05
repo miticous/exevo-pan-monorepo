@@ -1,5 +1,5 @@
 import * as faker from 'faker'
-import { rareItem } from 'data-dictionary'
+import * as rareItem from 'data-dictionary/dist/dictionaries/rareItems'
 import { randomAuctionId } from './CharacterMaker'
 import { rareItems } from '../constants'
 import { samplesFrom } from '../utils'

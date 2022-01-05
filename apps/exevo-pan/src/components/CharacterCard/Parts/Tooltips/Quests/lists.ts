@@ -1,6 +1,4 @@
-import { quest } from 'data-dictionary'
-
-const { constTokens, tokens } = quest
+import { constTokens, tokens } from 'data-dictionary/dist/dictionaries/quest'
 
 export const utilitary: string[] = [
   constTokens['The Postman Missions'],

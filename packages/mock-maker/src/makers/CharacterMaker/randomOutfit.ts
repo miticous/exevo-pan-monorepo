@@ -1,5 +1,6 @@
 import * as faker from 'faker'
-import { outfit, storeOutfit } from 'data-dictionary'
+import * as outfit from 'data-dictionary/dist/dictionaries/outfit'
+import * as storeOutfit from 'data-dictionary/dist/dictionaries/storeOutfit'
 import { auctions } from '../../constants'
 import { singleSampleFrom, samplesFrom } from '../../utils'
 
