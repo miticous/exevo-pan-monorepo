@@ -75,11 +75,9 @@ At this point, your `app/bazaar-scraper/Output` directory should have this set o
 └── ServerData.json
 ```
 
-Move them accordingly to their respective apps:
+At `app/bazaar-scraper/Output`, move them accordingly to their respective apps:
 
 ```sh
-# At app/bazaar-scraper/Output directory
-
 # current-auctions-worker app:
 cp *.json ../../current-auctions-worker/src/Data/
 
