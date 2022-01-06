@@ -23,6 +23,7 @@
     "dev:scraper": "yarn --cwd apps/bazaar-scraper dev:scraper",
     "dev:front": "NEXT_PUBLIC_FRONT_DEV=true turbo run dev --scope=exevo-pan",
     "build": "turbo run build",
+    "build:packages": "turbo run build:packages --include-dependencies --no-deps",
     "build:front": "NEXT_PUBLIC_FRONT_DEV=true turbo run build --scope=exevo-pan --include-dependencies --no-deps",
     "build:exevo-pan": "turbo run build --scope=exevo-pan --include-dependencies --no-deps",
     "build:current-auctions-worker": "turbo run build --scope=current-auctions-worker --include-dependencies --no-deps",
@@ -45,6 +46,12 @@
           "dist/**",
           ".next/**"
         ]
+      },
+      "build:packages": {
+        "dependsOn": [
+          "^build:packages"
+        ],
+        "cache": false
       },
       "test:all": {
         "outputs": [
