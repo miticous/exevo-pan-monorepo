@@ -12,7 +12,7 @@
     "format": "prettier --write 'src/**/*.{js,ts}'",
     "dev": "wrangler dev",
     "deploy": "wrangler publish",
-    "start:staging": "wrangler publish --env development"
+    "staging": "wrangler publish --env development"
   },
   "dependencies": {
     "auction-queries": "*",

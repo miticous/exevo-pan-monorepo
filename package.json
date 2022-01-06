@@ -24,11 +24,12 @@
     "dev:front": "NEXT_PUBLIC_FRONT_DEV=true turbo run dev --scope=exevo-pan",
     "build": "turbo run build",
     "build:front": "NEXT_PUBLIC_FRONT_DEV=true turbo run build --scope=exevo-pan --include-dependencies --no-deps",
-    "build:exevo-pan": "npx turbo run build --scope=exevo-pan --include-dependencies --no-deps",
-    "build:current-auctions-worker": "npx turbo run build --scope=current-auctions-worker --include-dependencies --no-deps",
-    "build:history-server": "npx turbo run build --scope=history-server --include-dependencies --no-deps",
-    "build:bazaar-scraper": "npx turbo run build --scope=bazaar-scraper --include-dependencies --no-deps",
-    "start:front": "NEXT_PUBLIC_FRONT_DEV=true turbo run start --scope=exevo-pan"
+    "build:exevo-pan": "turbo run build --scope=exevo-pan --include-dependencies --no-deps",
+    "build:current-auctions-worker": "turbo run build --scope=current-auctions-worker --include-dependencies --no-deps",
+    "build:history-server": "turbo run build --scope=history-server --include-dependencies --no-deps",
+    "build:bazaar-scraper": "turbo run build --scope=bazaar-scraper --include-dependencies --no-deps",
+    "start:front": "NEXT_PUBLIC_FRONT_DEV=true turbo run start --scope=exevo-pan",
+    "start:staging": "turbo run staging"
   },
   "devDependencies": {
     "prettier": "^2.5.1",
@@ -59,6 +60,9 @@
         "cache": false
       },
       "clean": {
+        "cache": false
+      },
+      "staging": {
         "cache": false
       }
     }
