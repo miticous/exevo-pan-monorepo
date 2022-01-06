@@ -35,7 +35,8 @@ export const writeJsonl = async <T>(
   path: string,
   objects: T[],
 ): Promise<void> => {
-  const eta = new TrackETA(objects.length)
+  const objectCount = objects.length
+  const eta = new TrackETA(objectCount > 0 ? objectCount : 1)
   const fileStream = fs.createWriteStream(path, { flags: 'w' })
 
   return new Promise((resolve, reject) => {
@@ -50,7 +51,7 @@ export const writeJsonl = async <T>(
     }
     fileStream.end()
     fileStream.on('finish', () => {
-      eta.setCurrentTask(task)
+      eta.setCurrentTask(task > 0 ? task : 1)
       eta.finish()
       resolve()
     })
