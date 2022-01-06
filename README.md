@@ -1,78 +1,101 @@
-# Turborepo starter
+# Exevo Pan 🍎
 
-This is an official Yarn v1 starter turborepo.
+[Exevo Pan](https://www.exevopan.com/) is an official [Tibia](https://www.tibia.com/) supported fansite focused on improving your Char Bazaar experience.
 
-## What's inside?
+![Exevo Pan](https://i.imgur.com/0x3ZPkF.png)
 
-This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager. It includes the following packages/apps:
+# What's inside?
 
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org) app
-- `web`: another [Next.js](https://nextjs.org) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Jest](https://jestjs.io) test runner for all things JavaScript
-- [Prettier](https://prettier.io) for code formatting
-
-## Setup
-
-This repository is used in the `npx create-turbo` command, and selected when choosing which package manager you wish to use with your monorepo (Yarn).
-
-### Build
-
-To build all apps and packages, run the following command:
+This monorepo contains the entire codebase of our project. Here is the anatomy:
 
 ```
-cd my-turborepo
-yarn run build
+├── automations
+├── apps
+│   ├── bazaar-scraper
+│   ├── current-auctions-worker
+│   ├── exevo-pan
+│   └── history-server
+├── packages
+│   ├── auction-queries
+│   ├── config
+│   ├── data-dictionary
+│   ├── logging
+│   ├── mock-maker
+│   ├── shared-utils
+│   ├── tsconfig
+│   └── @types
+└── package.json
 ```
 
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-yarn run dev
+The entire stack is built using `typescript`, so you will need `Node.js` and `yarn`. If you are starting from a fresh clone of this repository, start with:
+```bash
+yarn && yarn build:packages
 ```
 
-### Remote Caching
+This will install and build all the `apps` dependencies.
 
-Turborepo can use a technique known as [Remote Caching (Beta)](https://turborepo.org/docs/features/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+## Apps
 
-By default, Turborepo will cache locally. To enable Remote Caching (Beta) you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+- [exevo-pan](apps/exevo-pan): the frontend application, built with `React`
+- [bazaar-scraper](apps/bazaar-scraper): a custom built tool for scraping Char Bazaar data from the official [Tibia](https://www.tibia.com/) website
+- [current-auctions-worker](apps/current-auctions-worker): a [Cloudflare Worker](https://workers.cloudflare.com/) that serves current auctions data
+- [history-server](apps/history-server): an `Express` webserver responsible for serving past auctions data
+
+# Setup
+
+It's advisible that you read every app documentation before trying to run the full stack. Still, here is a simple recipe for you to get started:
+
+## Install all the dependencies
+```
+yarn && yarn build:packages
+```
+
+## Scrape some data
+
+At the `app/bazaar-scraper` directory, run:
+```
+yarn scrap:auctions
+```
+
+to get current auctions data. Then run:
+```
+yarn scrap:history
+```
+
+to get some history auction data. Scraping the entire History data will take several days, but you skip this process as soon as `HistoryAuctions.jsonl` has been outputted.
+
+#
+At this point, your `app/bazaar-scraper/Output` directory should have this set of data:
 
 ```
-cd my-turborepo
-npx turbo login
+├── CurrentAuctions.json
+├── HistoryAuctions.jsonl
+├── ItemsData.json
+├── ScrapHistoryData.json
+└── ServerData.json
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+Move them accordingly to their respective apps:
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
+```sh
+# At app/bazaar-scraper/Output directory
 
+# current-auctions-worker app:
+cp *.json ../../current-auctions-worker/src/Data/
+
+# history-server app:
+cp ServerData.json ../../history-server/src/Data
+cp HistoryAuctions.jsonl ../../history-server/src/Data
 ```
-npx turbo link
+
+#
+
+Now you are ready to have a minimal dev enviroment! Go back to the repository root directory and run:
+```
+yarn dev
 ```
 
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Pipelines](https://turborepo.org/docs/features/pipelines)
-- [Caching](https://turborepo.org/docs/features/caching)
-- [Remote Caching (Beta)](https://turborepo.org/docs/features/remote-caching)
-- [Scoped Tasks](https://turborepo.org/docs/features/scopes)
-- [Configuration Options](https://turborepo.org/docs/reference/configuration)
-- [CLI Usage](https://turborepo.org/docs/reference/command-line-reference)
+Now you are ready to roll! Apps will be running on:
+- **exevo-pan**: [http://localhost:3000](http://localhost:3000)
+- **current-auctions-worker**: [http://localhost:8787](http://localhost:8787)
+- **history-server**: [http://localhost:4000](http://localhost:4000)
