@@ -8,8 +8,8 @@
   "scripts": {
     "build": "webpack",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-    "format": "prettier --write  '*.{json,js}' 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",
-    "lint": "eslint --max-warnings=0 src && prettier --check '*.{json,js}' 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",
+    "lint": "eslint src && prettier --check 'src/**/*.{js,ts}'",
+    "format": "prettier --write 'src/**/*.{js,ts}'",
     "dev": "wrangler dev",
     "deploy": "wrangler publish"
   },

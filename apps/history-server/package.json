@@ -5,6 +5,8 @@
   "description": "Exevo Pan history auctions server",
   "license": "Unlicense",
   "scripts": {
+    "lint": "eslint src && prettier --check 'src/**/*.{js,ts}'",
+    "format": "prettier --write 'src/**/*.{js,ts}'",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "PORT=4000 sucrase-node src",
     "build": "rm -rf dist && sucrase ./src -d ./dist --transforms typescript,imports && cp ./src/Data/*.json ./dist/Data && cp ./src/Data/*.jsonl ./dist/Data",

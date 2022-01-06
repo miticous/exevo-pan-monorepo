@@ -9,6 +9,8 @@
     "eslint-react.js"
   ],
   "scripts": {
+    "lint": "eslint src && prettier --check 'src/**/*.{js,ts}'",
+    "format": "prettier --write 'src/**/*.{js,ts}'",
     "clean": "rm -rf node_modules"
   },
   "dependencies": {

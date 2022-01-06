@@ -9,6 +9,8 @@
     "dist"
   ],
   "scripts": {
+    "lint": "eslint src && prettier --check 'src/**/*.{js,ts}'",
+    "format": "prettier --write 'src/**/*.{js,ts}'",
     "build": "rm -rf dist/ && tsc",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },

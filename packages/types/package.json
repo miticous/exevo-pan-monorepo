@@ -5,5 +5,9 @@
   "description": "Shared types used across Exevo Pan projects",
   "license": "Unlicense",
   "main": "",
-  "types": "index.d.ts"
+  "types": "index.d.ts",
+  "scripts": {
+    "lint": "eslint src && prettier --check 'src/**/*.d.ts'",
+    "format": "prettier --write 'src/**/*.d.ts'"
+  }
 }
