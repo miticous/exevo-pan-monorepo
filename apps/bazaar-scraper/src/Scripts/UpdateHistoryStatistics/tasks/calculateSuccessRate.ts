@@ -6,5 +6,6 @@ export const calculateSuccessRate = (
     ({ hasBeenBidded }) => hasBeenBidded,
   ).length
 
-  return +((successCount / totalCount) * 100).toFixed(2)
+  const result = +((successCount / totalCount) * 100).toFixed(2)
+  return Number.isNaN(result) ? 50 : result
 }

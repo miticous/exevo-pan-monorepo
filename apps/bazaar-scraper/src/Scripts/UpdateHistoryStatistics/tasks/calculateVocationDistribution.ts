@@ -15,6 +15,18 @@ const fixedPercentage = (value: number): number =>
 export const calculateVocationDistribution = (
   history: PartialCharacterObject[],
 ): DistributionData => {
+  const totalCount = history.length
+
+  if (totalCount === 0) {
+    return {
+      rooker: 20,
+      knight: 20,
+      paladin: 20,
+      sorcerer: 20,
+      druid: 20,
+    }
+  }
+
   const vocationCount: Record<VocationCountKey, number> = {
     rooker: 0,
     knight: 0,
@@ -27,8 +39,6 @@ export const calculateVocationDistribution = (
     const vocation = vocationIdToKey[vocationId as keyof typeof vocationIdToKey]
     vocationCount[vocation] += 1
   })
-
-  const totalCount = history.length
 
   return {
     rooker: fixedPercentage(vocationCount.rooker / totalCount),
