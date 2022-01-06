@@ -7,6 +7,9 @@ route = ""
 zone_id = ""
 compatibility_date = "2021-11-06"
 
+[env.development]
+name = "auctions-development"
+
 [build]
 command = "yarn build"
 [build.upload]

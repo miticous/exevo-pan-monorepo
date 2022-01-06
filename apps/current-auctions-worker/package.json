@@ -11,7 +11,8 @@
     "lint": "eslint src && prettier --check 'src/**/*.{js,ts}'",
     "format": "prettier --write 'src/**/*.{js,ts}'",
     "dev": "wrangler dev",
-    "deploy": "wrangler publish"
+    "deploy": "wrangler publish",
+    "start:staging": "wrangler publish --env development"
   },
   "dependencies": {
     "auction-queries": "*",
