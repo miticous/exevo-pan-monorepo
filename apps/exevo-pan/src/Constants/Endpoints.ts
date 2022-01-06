@@ -7,7 +7,7 @@ const LOCAL_HISTORY_ENDPOINT = 'http://localhost:4000'
 export const endpoints = {
   CURRENT_AUCTIONS: isLocal
     ? LOCAL_AUCTIONS_ENDPOINT
-    : 'https://auctions.exevopan.workers.dev',
+    : 'https://auctions.service-exevopan.com',
   HISTORY_AUCTIONS: isLocal
     ? LOCAL_HISTORY_ENDPOINT
     : 'https://history.service-exevopan.com',
