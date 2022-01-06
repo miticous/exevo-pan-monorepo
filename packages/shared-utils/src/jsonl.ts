@@ -11,7 +11,9 @@ export const readJsonl = async <T>(path: string): Promise<T[]> => {
 
   const fileStream = fs.createReadStream(path, { encoding: 'utf8' })
   const rl = readline.createInterface({ input: fileStream })
-  const eta = new TrackETA(fileStat.size)
+
+  const bytes = fileStat.size
+  const eta = new TrackETA(bytes > 0 ? bytes : 1)
 
   const updater = setInterval(
     () => eta.setCurrentTask(fileStream.bytesRead),
@@ -25,7 +27,9 @@ export const readJsonl = async <T>(path: string): Promise<T[]> => {
   }
 
   clearInterval(updater)
-  eta.setCurrentTask(fileStream.bytesRead)
+
+  const { bytesRead } = fileStream
+  eta.setCurrentTask(bytesRead > 0 ? bytesRead : 1)
   eta.finish()
 
   return array
