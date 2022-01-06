@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/xandjiji/exevo-pan"
   },
-  "private": "true",
+  "private": true,
   "workspaces": [
     "apps/*",
     "packages/*"
