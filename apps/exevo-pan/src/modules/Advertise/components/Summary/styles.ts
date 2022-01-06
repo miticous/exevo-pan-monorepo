@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Tooltip as BaseTooltip } from 'components/Organisms'
 import ReceiptSvg from 'assets/svgs/receipt.svg'
-import { MaterialCard, Smooth } from 'styles'
+import { MaterialCard } from 'styles'
 
 export const Wrapper = styled.section`
   ${MaterialCard}

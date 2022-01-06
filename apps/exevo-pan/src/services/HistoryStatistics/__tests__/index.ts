@@ -1,4 +1,4 @@
-import { endpoints, paths, localStorageKeys } from 'Constants'
+import { endpoints, paths } from 'Constants'
 import HistoryStatisticsClient from '..'
 import { EMPTY_STATISTICS } from '../schema'
 import { mockedStatisticsData } from './mock'

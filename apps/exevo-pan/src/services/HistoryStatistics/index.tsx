@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { endpoints, paths } from 'Constants'
 import { EMPTY_STATISTICS } from './schema'
 

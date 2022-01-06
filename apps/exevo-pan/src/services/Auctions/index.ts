@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { endpoints, paths } from 'Constants'
 import { serializeBody } from 'shared-utils/dist/contracts/Filters/utils'
 import {

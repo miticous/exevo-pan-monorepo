@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { getFromLocalStorage, saveToLocalStorage } from 'utils'
 import { endpoints, paths, localStorageKeys } from 'Constants'
 import { unminifyGuildData } from 'shared-utils/dist/unminifyGuildData'
