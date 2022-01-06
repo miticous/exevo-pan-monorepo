@@ -1,11 +1,11 @@
 import express from 'express'
 import cors from 'cors'
-import localtunnel from 'localtunnel'
 import { deserializeBody } from 'shared-utils/dist/contracts/Filters/utils'
 import { paginateData } from 'auction-queries'
 import { broadcast, coloredText } from 'logging'
 import { loadAuctions } from './Data/historyAuctions'
 import { preloadCache, applySort, filterCharacters } from './cachedWrapper'
+import { exposeLocalhost } from './localtunnel'
 
 const { PORT, STAGING } = process.env
 
@@ -41,7 +41,7 @@ const main = async () => {
     response.json(responseBody)
   })
 
-  app.listen(PORT, async () => {
+  app.listen(PORT, () => {
     broadcast(
       `${coloredText(
         'History Server',
@@ -49,21 +49,9 @@ const main = async () => {
       )} is running at http://localhost:${PORT}`,
       'success',
     )
-
-    if (STAGING) {
-      const tunnel = await localtunnel({
-        port: 4000,
-        subdomain: 'staging-history-exevopan',
-      })
-
-      broadcast(
-        `${coloredText('Localhost', 'highlight')} is being tunneled to ${
-          tunnel.url
-        }`,
-        'success',
-      )
-    }
   })
+
+  if (STAGING) exposeLocalhost()
 }
 
 main()
