@@ -2,7 +2,9 @@
 
 [Exevo Pan](https://www.exevopan.com/) is an official [Tibia](https://www.tibia.com/) supported fansite focused on improving your Char Bazaar experience.
 
-![Exevo Pan](https://i.imgur.com/0x3ZPkF.png)
+<p align="center">
+    <img alt="Exevo Pan" src="https://i.imgur.com/0x3ZPkF.png">
+</p>
 
 # What's inside?
 
@@ -32,7 +34,11 @@ The entire stack is built using `typescript`, so you will need `Node.js` and `ya
 yarn && yarn build:packages
 ```
 
-This will install and build all the `apps` dependencies.
+This will install and build all the `apps` dependencies. You will also need to install Workers CLI:
+
+```bash
+yarn global add @cloudflare/wrangler
+```
 
 ## Apps
 
