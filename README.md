@@ -31,7 +31,7 @@ This monorepo contains the entire codebase of our project. Here is the anatomy:
 
 The entire stack is built using `typescript`, so you will need `Node.js` and `yarn`. If you are starting from a fresh clone of this repository, start with:
 ```bash
-yarn && yarn build:packages
+yarn
 ```
 
 This will install and build all the `apps` dependencies. You will also need to install Workers CLI:
