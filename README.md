@@ -56,40 +56,43 @@ It's advisible that you read every app documentation before trying to run the fu
 yarn && yarn build:packages
 ```
 
-## Scrape some data
+## Scraping current auctions data
 
-At the `app/bazaar-scraper` directory, run:
+At the `apps/bazaar-scraper` directory, run:
 ```
 yarn scrap:auctions
 ```
 
-to get current auctions data. Then run:
+to get current auctions data. Then, fetch for highlighted auctions:
+```
+yarn update:highlighted
+```
+
+## Scraping history auctions data
+
+To get some history auction data, start with:
 ```
 yarn scrap:history
 ```
 
-to get some history auction data. Scraping the entire History data will take several days, but you skip this process as soon as `HistoryAuctions.jsonl` has been outputted.
+Scraping the entire History data will take several days, but you can skip this process as soon as `HistoryAuctions.jsonl` has been outputted.
+
+Now generate some history statistics data using:
+```
+yarn update:statistics
+```
 
 #
-At this point, your `app/bazaar-scraper/Output` directory should have this set of data:
+At this point, your `apps/bazaar-scraper/Output` directory should have this set of data:
 
 ```
 ├── CurrentAuctions.json
+├── HighlightedAuctions.json
 ├── HistoryAuctions.jsonl
+├── HistoryStatistics.json
 ├── ItemsData.json
 ├── ScrapHistoryData.json
 └── ServerData.json
-```
-
-At `app/bazaar-scraper/Output`, move them accordingly to their respective apps:
-
-```sh
-# current-auctions-worker app:
-cp *.json ../../current-auctions-worker/src/Data/
-
-# history-server app:
-cp ServerData.json ../../history-server/src/Data
-cp HistoryAuctions.jsonl ../../history-server/src/Data
 ```
 
 #
@@ -103,3 +106,4 @@ Now you are ready to roll! Apps will be running on:
 - **exevo-pan**: [http://localhost:3000](http://localhost:3000)
 - **current-auctions-worker**: [http://localhost:8787](http://localhost:8787)
 - **history-server**: [http://localhost:4000](http://localhost:4000)
+- **static-data-server**: [http://localhost:5555](http://localhost:5555)

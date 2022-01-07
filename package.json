@@ -19,7 +19,7 @@
     "format": "turbo run format",
     "clean": "turbo run clean && rm -rf node_modules",
     "test": "turbo run test:all",
-    "dev": "scripts/cleanEnvOverrides.sh && turbo run dev --parallel",
+    "dev": "scripts/setupDev.sh && turbo run dev --parallel",
     "dev:scraper": "yarn --cwd apps/bazaar-scraper dev:scraper",
     "dev:front": "scripts/forceProd.sh && turbo run dev --scope=exevo-pan",
     "postinstall": "turbo run build:packages --include-dependencies --no-deps",
