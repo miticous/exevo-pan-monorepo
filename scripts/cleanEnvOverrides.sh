@@ -1,0 +1,1 @@
+rm apps/exevo-pan/.env.development.local
