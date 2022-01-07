@@ -27,6 +27,8 @@ export default class CurrentAuctionsData {
   private async save(): Promise<void> {
     if (this.currentAuctions.length === 0) {
       broadcast(`WARNING! Writing empty values to ${FILE_NAME}`, 'fail')
+      broadcast('exiting gracefully...', 'control')
+      process.exit()
     }
 
     this.currentAuctions = this.currentAuctions.sort(
