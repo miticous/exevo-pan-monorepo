@@ -12,7 +12,9 @@
     "scrap:auctions": "NODE_PATH=./src sucrase-node src/Scripts/UpdateAuctions/run.ts",
     "scrap:history": "NODE_PATH=./src sucrase-node src/Scripts/ScrapHistory/run.ts",
     "update:statistics": "NODE_PATH=./src sucrase-node src/Scripts/UpdateHistoryStatistics/run.ts",
-    "update:highlighted": "NODE_PATH=./src sucrase-node src/Scripts/GetHighlightedAuctions/run.ts"
+    "update:highlighted": "NODE_PATH=./src sucrase-node src/Scripts/GetHighlightedAuctions/run.ts",
+    "dev": "serve -l 5555 Output",
+    "staging": "Output/staging/deployStaging.sh"
   },
   "dependencies": {
     "@types/cheerio": "^0.22.30",
@@ -27,8 +29,10 @@
     "logging": "*",
     "node-fetch": "^2.6.1",
     "nodemon": "^2.0.15",
+    "serve": "^13.0.2",
     "shared-utils": "*",
     "sucrase": "^3.20.3",
+    "surge": "^0.23.0",
     "user-agents": "^1.0.862"
   }
 }
